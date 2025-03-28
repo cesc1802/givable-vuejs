@@ -1,13 +1,12 @@
 <script lang="ts" setup>
-import Header from '@components/Header/index.vue';
-import Footer from '@components/Footer/index.vue';
-import './styles.css';
-
+import Header from "@components/Header/index.vue";
+import Footer from "@components/Footer/index.vue";
+import "./styles.css";
 </script>
 
 <template>
   <div class="h-screen flex flex-col">
-    <header class="header bg-[#F9F4E8]" >
+    <header class="header bg-[#F9F4E8]">
       <slot name="header">
         <Header />
       </slot>
@@ -21,9 +20,9 @@ import './styles.css';
       <main>
         <router-view />
       </main>
-    </div>
-    <div class="footer">
-      <Footer />
+      <div class="footer">
+        <Footer />
+      </div>
     </div>
   </div>
 </template>
