@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import path from 'path';
+import tailwindcss from '@tailwindcss/vite'
+import svgLoader from 'vite-svg-loader';
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), svgLoader(), tailwindcss()],
   build: {
     rollupOptions: {
       output: {
@@ -24,6 +26,7 @@ export default defineConfig({
       '@store': path.resolve(__dirname, 'src/store'),
       '@utils': path.resolve(__dirname, 'src/utils'),
       '@model': path.resolve(__dirname, 'src/model'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
     },
   },
 });
