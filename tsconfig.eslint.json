@@ -1,0 +1,12 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "module": "esnext",
+      "noEmit": true,
+      "skipLibCheck": true,
+      "strict": true
+    },
+    // Include .vue files so typed linting sees them
+    "include": ["src/**/*.ts", "src/**/*.vue"]
+  }
+  

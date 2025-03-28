@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  app:
+    # platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    ports:
+      - '3000:3000'
+    environment:
+      - URL=http://localhost
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=200
+    volumes:
+      - .:/src
+      - /src/node_modules

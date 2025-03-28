@@ -1,0 +1,28 @@
+##############################
+# Stage 1: Build the project #
+##############################
+# Use Node 20 Alpine instead of Node 16
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci
+
+COPY . .
+
+ENV VITE_URL=http://localhost:80
+ENV VITE_IS_PROD=true
+
+# Build the project
+RUN npm run build
+
+##################################
+# Stage 2: Serve static content  #
+##################################
+FROM nginx:stable-alpine
+
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
