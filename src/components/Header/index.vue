@@ -1,11 +1,15 @@
 <template>
   <div class="flex items-center justify-between">
     <div class="flex gap-[24px]">
-      <router-link to="/" class="flex items-center gap-[8px] cursor-pointer" @click="() => router.push('/')">
-        <HeartIcon class="text-[#00715D] w-8 h-8" />
-        <span class="text-[#00715D] font-bold text-[24px]">Givables</span>
+      <router-link
+        to="/"
+        class="flex items-center gap-[8px] cursor-pointer"
+        @click="() => router.push('/')"
+      >
+        <HeartIcon class="text-primary w-8 h-8" />
+        <span class="text-primary font-bold text-[24px]">Givables</span>
       </router-link>
-      <ul class="flex items-center ">
+      <ul class="flex items-center">
         <li
           v-for="(item, idx) in menuItems"
           :key="idx"
@@ -14,12 +18,14 @@
           @click="handleDirectPage(item)"
         >
           <component :is="item.icon" class="w-5 h-5" />
-         <span> {{ item.label }}</span>
+          <span> {{ item.label }}</span>
         </li>
       </ul>
     </div>
     <div class="flex items-center gap-[20px]">
-      <button class="border-[#535C6B] w-9 h-9 border-1 rounded-lg justify-center flex items-center cursor-pointer">
+      <button
+        class="border-[#535C6B] w-9 h-9 border-1 rounded-lg justify-center flex items-center cursor-pointer"
+      >
         <SunIcon class="w-4 h-4" />
       </button>
       <div class="flex items-center gap-2">
@@ -39,8 +45,8 @@ import GiftIcon from "@assets/icons/gift.svg";
 import AlertIcon from "@assets/icons/alert-octagon.svg";
 import SunIcon from "@assets/icons/sun.svg";
 import MessageQuestionIcon from "@assets/icons/message-question.svg";
-import Button from 'primevue/button';
-import { ref } from "vue"
+import Button from "primevue/button";
+import { ref } from "vue";
 import "./styles.css";
 import { useRoute, useRouter } from "vue-router";
 
@@ -51,33 +57,33 @@ const menuItems = ref([
   {
     label: "Tìm kiếm",
     icon: SearchIcon,
-    link: '/search',
+    link: "/search",
   },
   {
     label: "Chia sẻ",
     icon: GiftIcon,
-    link: '/share',
+    link: "/share",
   },
   {
     label: "Giới thiệu",
     icon: AlertIcon,
-    link: '/about',
+    link: "/about",
   },
   {
     label: "FAQ",
     icon: MessageQuestionIcon,
-    link: '/faq',
+    link: "/faq",
   },
-])
+]);
 
-const router = useRouter()
+const router = useRouter();
 
-const route = useRoute()
+const route = useRoute();
 
-const isPathActive  = (path: string) => {
-  return [path === route.path ? 'text-[#00715D]' : 'text-[#535C6B]']
-}
+const isPathActive = (path: string) => {
+  return [path === route.path ? "text-[#00715D]" : "text-[#535C6B]"];
+};
 const handleDirectPage = (item: any) => {
-  router.push(item.link)
-}
+  router.push(item.link);
+};
 </script>
