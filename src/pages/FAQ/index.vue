@@ -1,7 +1,7 @@
 <template>
   <div class="faq p-12">
     <div
-      class="flex justify-center items-center mb-8 text-[#00715d] font-semibold text-[30px]"
+      class="flex justify-center items-center mb-8 text-primary font-semibold text-[30px]"
     >
       Câu hỏi thường gặp
     </div>

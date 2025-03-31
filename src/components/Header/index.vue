@@ -13,7 +13,7 @@
         <li
           v-for="(item, idx) in menuItems"
           :key="idx"
-          class="flex items-center gap-[8px] text-[14px] p-[10px] hover:text-[#00715D] cursor-pointer"
+          class="flex items-center gap-[8px] text-[14px] p-[10px] hover:text-primary cursor-pointer"
           :class="[isPathActive(item.link)]"
           @click="handleDirectPage(item)"
         >
@@ -30,7 +30,7 @@
       </button>
       <div class="flex items-center gap-2">
         <img src="@assets/images/avatar.png" class="inline" />
-        <span class="text-[14px] text-[#00715D]">Giselle</span>
+        <span class="text-[14px] text-primary">Giselle</span>
       </div>
     </div>
   </div>
@@ -81,7 +81,7 @@ const router = useRouter();
 const route = useRoute();
 
 const isPathActive = (path: string) => {
-  return [path === route.path ? "text-[#00715D]" : "text-[#535C6B]"];
+  return [path === route.path ? "text-primary" : "text-[#535C6B]"];
 };
 const handleDirectPage = (item: any) => {
   router.push(item.link);

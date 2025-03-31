@@ -15,7 +15,7 @@
         <h2 class="text-4xl font-bold">
           Nền tảng trao và nhận đồ
           <span
-            class="bg-[#F9F4E8] text-[#00715D] px-2 rounded-md tracking-[-0.96px]"
+            class="bg-[#F9F4E8] text-primary px-2 rounded-md tracking-[-0.96px]"
             >miễn phí</span
           >
         </h2>
@@ -25,12 +25,12 @@
         </p>
         <div class="mt-8 flex gap-4">
           <button
-            class="bg-[#00715D] text-white font-bold px-6 py-3 rounded-full shadow-md hover:bg-[#00715D] transition cursor-pointer"
+            class="bg-primary text-white font-bold px-6 py-3 rounded-full shadow-md hover:bg-primary transition cursor-pointer"
           >
             Chia sẻ vật phẩm
           </button>
           <button
-            class="border border-white text-white font-bold px-6 py-3 rounded-full shadow-md hover:bg-white hover:text-[#00715D] transition cursor-pointer"
+            class="border border-white text-white font-bold px-6 py-3 rounded-full shadow-md hover:bg-white hover:text-primary transition cursor-pointer"
           >
             Tìm vật phẩm
           </button>
@@ -44,7 +44,7 @@
           :key="item.label"
           class="flex items-center gap-[24px]"
         >
-          <div class="p-[10px] bg-[#00715D] rounded-lg">
+          <div class="p-[10px] bg-primary rounded-lg">
             <component :is="item.icon" class="text-white w-8 h-8" />
           </div>
 
@@ -60,7 +60,7 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-4 bg-[#0B5949] px-[184.5px] py-[44px]">
+    <div class="grid grid-cols-4 bg-primary-100 px-[184.5px] py-[44px]">
       <div
         v-for="(item, idx) in statisticalItems"
         :key="idx"
@@ -111,12 +111,12 @@
 
             <div class="mt-5 flex gap-4">
               <button
-                class="flex items-center justify-center w-[191px] gap-3 border border-[#00715D] text-[#00715D] px-[28px] py-4 rounded-[8px] hover:bg-[#00715D] hover:text-white transition cursor-pointer"
+                class="flex items-center justify-center w-[191px] gap-3 border border-primary text-primary px-[28px] py-4 rounded-[8px] hover:bg-primary hover:text-white transition cursor-pointer"
               >
                 <SearchIcon class="w-5 h-5" /> Tìm kiếm
               </button>
               <button
-                class="flex items-center justify-center w-[191px] gap-3 bg-[#00715D] text-white px-[28px] py-4 rounded-[8px] hover:bg-[#00715D] transition cursor-pointer"
+                class="flex items-center justify-center w-[191px] gap-3 bg-primary text-white px-[28px] py-4 rounded-[8px] hover:bg-primary transition cursor-pointer"
               >
                 <GiftIcon class="w-5 h-5" /> Chia sẻ
               </button>
@@ -127,7 +127,7 @@
     </section>
 
     <section>
-      <div class="bg-[#00715D] flex-row justify-center items-center gap-8">
+      <div class="bg-primary flex-row justify-center items-center gap-8">
         <h1 class="text-[60px] font-bold text-[#F9F4E8] mb-6">
           Tham gia cộng đồng
         </h1>
@@ -141,7 +141,7 @@
         </p>
         <p class="justify-center flex items-center mb-8">
           <button
-            class="border-[#00715D] bg-[#F9F4E8] py-4 px-[28px] w-[190px] rounded-[25px] text-[#00715D] text-[20px] cursor-pointer"
+            class="border-primary bg-[#F9F4E8] py-4 px-[28px] w-[190px] rounded-[25px] text-primary text-[20px] cursor-pointer"
             style="box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05)"
           >
             Đăng ký ngay

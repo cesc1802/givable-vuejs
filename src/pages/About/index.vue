@@ -4,7 +4,7 @@
       class="container mx-auto grid grid-cols-1 md:grid-cols-3 items-center gap-8"
     >
       <div class="flex-row justify-center items-center col-span-2">
-        <h2 class="text-[#00715D] font-bold text-4xl mb-6 text-center">
+        <h2 class="text-primary font-bold text-4xl mb-6 text-center">
           Givables
         </h2>
         <div class="text-[#535C6B] text-2xl leading-8 text-center">
@@ -23,7 +23,7 @@
 
   <!-- COMMITMENT INFORMAITON -->
   <section>
-    <div class="grid grid-cols-4 bg-[#0B5949] px-[184.5px] py-[44px]">
+    <div class="grid grid-cols-4 bg-primary-100 px-[184.5px] py-[44px]">
       <div
         v-for="(item, idx) in COMMITMENT_INFORMAITON"
         :key="idx"
@@ -44,7 +44,7 @@
   <section>
     <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-8 p-[44px]">
       <div class="flex flex-col gap-5 items-center">
-        <h2 class="text-3xl font-semibold text-[#00715D]">
+        <h2 class="text-3xl font-semibold text-primary">
           Quy trình nhận vật phẩm
         </h2>
         <BoxCard
@@ -96,7 +96,7 @@
         <img src="/src/assets/images/thumbnail-4.png" alt="Givables Image" />
       </div>
       <div class="flex flex-col gap-5 items-center">
-        <h2 class="text-3xl font-semibold text-[#00715D]">
+        <h2 class="text-3xl font-semibold text-primary">
           Quy trình trao vật phẩm
         </h2>
         <BoxCard
@@ -136,7 +136,7 @@
   <!-- RULES OF USE -->
   <section>
     <div
-      class="grid grid-cols-1 md:grid-cols-2 items-center gap-8 p-[44px] bg-[#0B5949] text-white"
+      class="grid grid-cols-1 md:grid-cols-2 items-center gap-8 p-[44px] bg-primary-100 text-white"
     >
       <div class="flex flex-col gap-5 items-center col-span-2">
         <h2 class="text-3xl font-semibold">Nguyên tắc sử dụng</h2>
@@ -163,16 +163,16 @@
 </template>
 
 <script setup lang="ts">
-import GiftIcon from "@assets/icons/gift.svg";
-import MapPinIcon from "@assets/icons/map-pin.svg";
-import PocketIcon from "@assets/icons/pocket.svg";
-import StartIcon from "@assets/icons/star.svg";
-import TickCircleIcon from "@assets/icons/tick-circle.svg";
-import SearchIcon from "@assets/icons/search.svg";
-import SendIcon from "@assets/icons/send.svg";
-import CameraIcon from "@assets/icons/camera.svg";
-import HeartIcon from "@assets/icons/heart.svg";
-import UsersIcon from "@assets/icons/users.svg";
+import GiftIcon from "@/assets/icons/gift.svg";
+import MapPinIcon from "@/assets/icons/map-pin.svg";
+import PocketIcon from "@/assets/icons/pocket.svg";
+import StartIcon from "@/assets/icons/star.svg";
+import TickCircleIcon from "@/assets/icons/tick-circle.svg";
+import SearchIcon from "@/assets/icons/search.svg";
+import SendIcon from "@/assets/icons/send.svg";
+import CameraIcon from "@/assets/icons/camera.svg";
+import HeartIcon from "@/assets/icons/heart.svg";
+import UsersIcon from "@/assets/icons/users.svg";
 
 import BoxCard from "@components/base/BoxCard/index.vue";
 
