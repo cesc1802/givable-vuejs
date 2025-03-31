@@ -1,34 +1,28 @@
-<script lang="ts">
-import Header from '@components/Header/index.vue';
-import Sidebar from '@components/Sidebar/index.vue';
-import { defineComponent } from 'vue';
-import './styles.css';
-
-export default defineComponent({
-  name: 'MainLayout',
-  components: {
-    Header,
-    Sidebar,
-  },
-});
+<script lang="ts" setup>
+import Header from "@components/Header/index.vue";
+import Footer from "@components/Footer/index.vue";
+import "./styles.css";
 </script>
 
 <template>
-  <div class="main-layout">
-    <header class="header">
+  <div class="h-screen flex flex-col">
+    <header class="header bg-[#F9F4E8]">
       <slot name="header">
         <Header />
       </slot>
     </header>
-    <div class="content">
-      <aside class="sidebar">
+    <div class="flex-1 overflow-auto">
+      <!-- <aside class="sidebar">
         <slot name="sidebar">
           <Sidebar />
         </slot>
-      </aside>
-      <main class="main">
+      </aside> -->
+      <main>
         <router-view />
       </main>
+      <div class="footer">
+        <Footer />
+      </div>
     </div>
   </div>
 </template>

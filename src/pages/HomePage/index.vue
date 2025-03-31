@@ -1,47 +1,239 @@
 <template>
   <div class="home-page">
-    <h1>Home Page</h1>
-    <ul v-if="products.length">
-      <li v-for="product in products" :key="product.id" class="product-item">
-        <h3>{{ product.title }}</h3>
-        <p>{{ product.description }}</p>
-        <p><strong>Price:</strong> ${{ product.price }}</p>
-      </li>
-    </ul>
-    <p v-else>Loading products...</p>
+    <div class="relative w-full h-[400px]">
+      <img
+        src="/src/assets/images/side-view-hands-keeping-field-1.png"
+        alt="Background"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+
+      <div class="absolute inset-0 bg-black/50"></div>
+
+      <div
+        class="relative z-10 flex flex-col items-center justify-center h-full text-center text-[#F9F4E8]"
+      >
+        <h2 class="text-4xl font-bold">
+          Nền tảng trao và nhận đồ
+          <span
+            class="bg-[#F9F4E8] text-[#00715D] px-2 rounded-md tracking-[-0.96px]"
+            >miễn phí</span
+          >
+        </h2>
+        <p class="text-[20px] mt-[22px] max-w-[600px] mx-auto">
+          Kết nối những người muốn cho đi với những người cần, góp phần xây dựng
+          cộng đồng chia sẻ bền vững.
+        </p>
+        <div class="mt-8 flex gap-4">
+          <button
+            class="bg-[#00715D] text-white font-bold px-6 py-3 rounded-full shadow-md hover:bg-[#00715D] transition cursor-pointer"
+          >
+            Chia sẻ vật phẩm
+          </button>
+          <button
+            class="border border-white text-white font-bold px-6 py-3 rounded-full shadow-md hover:bg-white hover:text-[#00715D] transition cursor-pointer"
+          >
+            Tìm vật phẩm
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="bg-[#F9F4E8]">
+      <div class="grid grid-cols-3 max-w-screen-xl mx-auto py-[44px] gap-x-8">
+        <div
+          v-for="item in items"
+          :key="item.label"
+          class="flex items-center gap-[24px]"
+        >
+          <div class="p-[10px] bg-[#00715D] rounded-lg">
+            <component :is="item.icon" class="text-white w-8 h-8" />
+          </div>
+
+          <div>
+            <p class="text-[#101828] text-lg font-semibold mb-1">
+              {{ item.label }}
+            </p>
+            <p class="text-[#535C6B] text-[16px] max-w-[360px]">
+              {{ item.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-4 bg-[#0B5949] px-[184.5px] py-[44px]">
+      <div
+        v-for="(item, idx) in statisticalItems"
+        :key="idx"
+        class="flex items-center gap-[20px]"
+      >
+        <component :is="item.icon" class="text-white w-16 h-16" />
+
+        <div>
+          <p class="text-[#F9F4E8] text-[30px] font-semibold mb-1">
+            {{ item.label }}
+          </p>
+          <p class="text-[#F9F4E8] text-[16px]">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div
+        class="flex items-center justify-center bg-[#fdf5ec] py-12 px-6 relative"
+      >
+        <div
+          class="absolute inset-0 bg-[url('/src/assets/images/background-volunteer-holding-box.svg')] bg-no-repeat bg-cover bg-center opacity-40"
+        ></div>
+
+        <div
+          class="max-w-8xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10"
+        >
+          <div class="flex justify-center">
+            <img
+              src="/src/assets/images/volunteer-holding-box-containing-donations-charity.png"
+              alt="Volunteer holding donation box"
+              class="w-[350px] md:w-[400px]"
+            />
+          </div>
+
+          <div class="text-left">
+            <h2
+              class="text-3xl md:text-4xl font-bold text-[#1f2937] tracking-[-0.96px]"
+            >
+              Chia sẻ vật phẩm
+            </h2>
+            <p
+              class="text-[#4b5563] mt-3 text-lg leading-relaxed max-w-[450px]"
+            >
+              Bạn có thể tìm kiếm hoặc chia sẻ các sản phẩm tại đây, góp phần
+              lan tỏa yêu thương và giúp đỡ những người có hoàn cảnh khó khăn.
+            </p>
+
+            <div class="mt-5 flex gap-4">
+              <button
+                class="flex items-center justify-center w-[191px] gap-3 border border-[#00715D] text-[#00715D] px-[28px] py-4 rounded-[8px] hover:bg-[#00715D] hover:text-white transition cursor-pointer"
+              >
+                <SearchIcon class="w-5 h-5" /> Tìm kiếm
+              </button>
+              <button
+                class="flex items-center justify-center w-[191px] gap-3 bg-[#00715D] text-white px-[28px] py-4 rounded-[8px] hover:bg-[#00715D] transition cursor-pointer"
+              >
+                <GiftIcon class="w-5 h-5" /> Chia sẻ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="bg-[#00715D] flex-row justify-center items-center gap-8">
+        <h1 class="text-[60px] font-bold text-[#F9F4E8] mb-6">
+          Tham gia cộng đồng
+        </h1>
+        <p
+          class="px-[200px] mb-6 text-center text-4xl text-[#F9F4E8] flex items-center justify-center"
+        >
+          <span class="w-[1040px]">
+            Nếu bạn có vật phẩm cần cho, hãy chia sẻ để xây dựng một cộng đồng
+            bền vững và ấm áp.</span
+          >
+        </p>
+        <p class="justify-center flex items-center mb-8">
+          <button
+            class="border-[#00715D] bg-[#F9F4E8] py-4 px-[28px] w-[190px] rounded-[25px] text-[#00715D] text-[20px] cursor-pointer"
+            style="box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05)"
+          >
+            Đăng ký ngay
+          </button>
+        </p>
+        <p class="justify-center flex items-center px-[65px] pb-[44px]">
+          <img src="/src/assets/images/thumbnail-1.png" class="w-full" />
+        </p>
+      </div>
+    </section>
   </div>
 </template>
 
-<script lang="ts">
-import { IProduct } from '@model/product';
-import HttpFetcher from '@utils/http';
-import { defineComponent, onMounted, ref } from 'vue';
-import './styles.css';
+<script lang="ts" setup>
+import GiftIcon from "@assets/icons/gift.svg";
+import HeartIcon from "@assets/icons/heart.svg";
+import MapPinIcon from "@assets/icons/map-pin.svg";
+import SearchIcon from "@assets/icons/search.svg";
+import SendIcon from "@assets/icons/send.svg";
+import TickCircleIcon from "@assets/icons/tick-circle.svg";
+import UsersIcon from "@assets/icons/users.svg";
+import BackgroundVolumnTeer from "@assets/images/background-volunteer-holding-box.svg";
+import { IProduct } from "@model/product";
+import HttpFetcher from "@utils/http";
+import { onMounted, ref } from "vue";
+import "./styles.css";
 
-export default defineComponent({
-  name: 'HomePage',
-  setup() {
-    const products = ref<IProduct[]>([]);
+const products = ref<IProduct[]>([]);
 
-    const fetchProducts = async () => {
-      try {
-        const response = await HttpFetcher.get(
-          'https://fakestoreapi.com/products'
-        );
-        console.log('response123', response);
-        if (!response.success) return;
-        products.value = response.data as IProduct[];
-        console.log('products123', products);
-      } catch (error) {
-        console.error('Error fetching products:', error);
-      }
-    };
+const fetchProducts = async () => {
+  try {
+    const response = await HttpFetcher.get("https://fakestoreapi.com/products");
+    console.log("response123", response);
+    if (!response.success) return;
+    products.value = response.data as IProduct[];
+    console.log("products123", products);
+  } catch (error) {
+    console.error("Error fetching products:", error);
+  }
+};
 
-    onMounted(() => {
-      fetchProducts();
-    });
-
-    return { products };
-  },
+onMounted(() => {
+  fetchProducts();
 });
+
+const items = ref([
+  {
+    label: "Chọn vật phẩm",
+    description:
+      "Tìm kiếm và chọn vật phẩm bạn cần từ danh sách các vật phẩm được chia sẻ miễn phí.",
+    icon: SearchIcon,
+  },
+  {
+    label: "Gửi yêu cầu",
+    description:
+      "Gửi yêu cầu nhận vật phẩm và chờ người cho xác nhận yêu cầu của bạn.",
+    icon: SendIcon,
+  },
+  {
+    label: "Nhận vật phẩm",
+    description:
+      "Sau khi được chấp nhận, bạn sẽ nhận được thông tin liên hệ để nhận vật phẩm.",
+    icon: TickCircleIcon,
+  },
+]);
+
+const statisticalItems = ref([
+  {
+    label: "1,234",
+    description: "Vật phẩm đã cho",
+    icon: GiftIcon,
+  },
+  {
+    label: "567",
+    description: "Thành viên",
+    icon: UsersIcon,
+  },
+  {
+    label: "32",
+    description: "Tỉnh thành",
+    icon: MapPinIcon,
+  },
+  {
+    label: "890",
+    description: "Lượt trao đổi",
+    icon: HeartIcon,
+  },
+]);
 </script>
+<style scoped>
+.banner {
+  background: url("@assets/images/side-view-hands-keeping-field-1") lightgray
+    50% / cover no-repeat;
+}
+</style>

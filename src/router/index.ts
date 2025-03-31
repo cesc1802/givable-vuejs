@@ -1,6 +1,11 @@
 import MainLayout from '@layouts/MainLayout.vue';
 import HomePage from '@pages/HomePage/index.vue';
 import LoginPage from '@pages/LoginPage/index.vue';
+import SearchPage from '@pages/Search/index.vue'
+import SharePage from '@pages/Share/index.vue'
+import AbouthPage from '@pages/About/index.vue'
+import FAQPage from '@pages/FAQ/index.vue'
+
 import NoPermission from '@pages/NoPermission/index.vue';
 import NotFound from '@pages/NotFound/index.vue';
 import type { RouteRecordRaw } from 'vue-router';
@@ -16,6 +21,24 @@ const routes: Array<RouteRecordRaw> = [
         path: '',
         name: 'HomePage',
         component: HomePage,
+      },
+      {
+        path: '/search',
+        name: 'SearchPage',
+        component: SearchPage,
+      },
+      {
+        path: '/share',
+        name: 'SharePage',
+        component: SharePage,
+      },{
+        path: '/about',
+        name: 'AbouthPage',
+        component: AbouthPage,
+      },{
+        path: '/faq',
+        name: 'FAQPage',
+        component: FAQPage,
       },
     ],
   },
