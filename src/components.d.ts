@@ -8,8 +8,10 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    BInput: typeof import('./components/base/BInput/index.vue')['default']
     BoxCard: typeof import('./components/base/BoxCard/index.vue')['default']
     BSelect: typeof import('./components/base/BSelect/index.vue')['default']
+    BTextarea: typeof import('./components/base/BTextarea/index.vue')['default']
     Footer: typeof import('./components/Footer/index.vue')['default']
     Header: typeof import('./components/Header/index.vue')['default']
     Input: typeof import('./components/base/Input/index.vue')['default']
