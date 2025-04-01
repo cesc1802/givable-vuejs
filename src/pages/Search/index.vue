@@ -1,16 +1,13 @@
 <script setup lang="ts">
 import ClockIcon from "@assets/icons/clock.svg";
 import MapPinIcon from "@/assets/icons/map-pin.svg";
-import { PRODUCT_ITEMS } from "@/constant/product";
+import { CATEGORIES_OPTION, PRODUCT_ITEMS } from "@/constant/product";
 
 const selectedCategory = ref("ALL");
 
 const categories = ref([
   { name: "Tất cả danh mục", code: "ALL" },
-  { name: "Quần/áo", code: "CLOTHES" },
-  { name: "Đồ gia dụng", code: "HOME" },
-  { name: "Đồ điện tử", code: "ELEC" },
-  { name: "Khác", code: "OTHER" },
+  ...CATEGORIES_OPTION,
 ]);
 
 const selectedCity = ref<string | undefined>();

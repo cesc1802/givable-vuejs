@@ -222,3 +222,15 @@ export const PRODUCT_ITEMS: ProductItem[] = [
     avatar: "/src/assets/images/avatar-2.png",
   },
 ];
+
+export interface CategoryOption {
+  name: string;
+  code: string;
+}
+
+export const CATEGORIES_OPTION: CategoryOption[] = [
+  { name: "Quần/áo", code: "CLOTHES" },
+  { name: "Đồ gia dụng", code: "HOME" },
+  { name: "Đồ điện tử", code: "ELEC" },
+  { name: "Khác", code: "OTHER" },
+];
