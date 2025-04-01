@@ -1,7 +1,16 @@
-@import "tailwindcss";
-@import "tailwindcss-primeui";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  --color-primary: #00715d;
+  --color-primary-100: #0b5949;
+}
+
+html.dark {
+  --color-primary: #f9f4e8;
 }
 
 body {

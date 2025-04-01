@@ -18,7 +18,16 @@ import "./styles.css";
         </slot>
       </aside> -->
       <main>
-        <router-view />
+        <div
+          class="flex items-center justify-center bg-[#fdf5ec] relative min-h-[calc(100vh-362px)]"
+        >
+          <div
+            class="absolute inset-0 bg-[url('/src/assets/images/background-volunteer-holding-box.svg')] bg-no-repeat bg-cover bg-center opacity-40"
+          ></div>
+          <div class="w-full z-10">
+            <router-view />
+          </div>
+        </div>
       </main>
       <div class="footer">
         <Footer />
