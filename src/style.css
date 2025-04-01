@@ -7,6 +7,14 @@
 
   --color-primary: #00715d;
   --color-primary-100: #0b5949;
+  --color-ivory: #f9f4e8;
+  --color-heading: #101828;
+
+  --p-select-overlay-background: #f9f4e8 !important;
+  --p-select-dropdown-color: #00715d !important;
+  --p-select-option-focus-background: #00715d !important;
+  --p-select-option-focus-color: #f9f4e8 !important;
+  --p-select-clear-icon-color: #00715d !important;
 }
 
 html.dark {

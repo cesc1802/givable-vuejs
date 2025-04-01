@@ -7,6 +7,12 @@ export default {
           100: "var(--color-primary-100)",
           DEFAULT: "var(--color-primary)",
         },
+        ivory: {
+          DEFAULT: "var(--color-ivory)",
+        },
+        heading: {
+          DEFAULT: "var(--color-heading)",
+        },
       },
     },
   },

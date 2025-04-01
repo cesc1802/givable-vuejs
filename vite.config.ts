@@ -2,9 +2,22 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
 import svgLoader from "vite-svg-loader";
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
 
 export default defineConfig({
-  plugins: [vue(), svgLoader()],
+  plugins: [
+    vue(),
+    svgLoader(),
+    AutoImport({
+      imports: ["vue", "vue-router"],
+      dts: "./src/auto-imports.d.ts",
+    }),
+    Components({
+      dts: "./src/components.d.ts",
+      resolvers: [], // Add your custom resolvers here if needed
+    }),
+  ],
   build: {
     rollupOptions: {
       output: {

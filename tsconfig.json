@@ -3,6 +3,8 @@
     "module": "commonjs",
     "baseUrl": ".",
     "paths": {
+      "@/*": ["src/*"],
+      "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
       "@router/*": ["src/router/*"],
@@ -15,7 +17,14 @@
     "allowSyntheticDefaultImports": true,
     "noEmit": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": true
   },
-  "include": ["src/**/*.ts", "src/**/*.vue", "jest.setup.ts", "shims-vue.d.ts", "global.d.ts"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "vite.config.ts",
+    "jest.setup.ts",
+    "shims-vue.d.ts",
+    "global.d.ts"
+  ]
 }

@@ -7,7 +7,7 @@
         class="absolute inset-0 w-full h-full object-cover"
       />
 
-      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="absolute inset-0 bg-[#06372DA6]"></div>
 
       <div
         class="relative z-10 flex flex-col items-center justify-center h-full text-center text-[#F9F4E8]"
@@ -37,6 +37,7 @@
         </div>
       </div>
     </div>
+
     <div class="bg-[#F9F4E8]">
       <div class="grid grid-cols-3 max-w-screen-xl mx-auto py-[44px] gap-x-8">
         <div
