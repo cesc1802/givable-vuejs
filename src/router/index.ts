@@ -1,61 +1,68 @@
-import MainLayout from '@layouts/MainLayout.vue';
-import HomePage from '@pages/HomePage/index.vue';
-import LoginPage from '@pages/LoginPage/index.vue';
-import SearchPage from '@pages/Search/index.vue'
-import SharePage from '@pages/Share/index.vue'
-import AbouthPage from '@pages/About/index.vue'
-import FAQPage from '@pages/FAQ/index.vue'
-
-import NoPermission from '@pages/NoPermission/index.vue';
-import NotFound from '@pages/NotFound/index.vue';
-import type { RouteRecordRaw } from 'vue-router';
-import { createRouter, createWebHistory } from 'vue-router';
+import MainLayout from "@layouts/MainLayout.vue";
+import AbouthPage from "@pages/About/index.vue";
+import FAQPage from "@pages/FAQ/index.vue";
+import HomePage from "@pages/HomePage/index.vue";
+import LoginPage from "@pages/LoginPage/index.vue";
+import NoPermission from "@pages/NoPermission/index.vue";
+import NotFound from "@pages/NotFound/index.vue";
+import SearchPage from "@pages/Search/index.vue";
+import SharePage from "@pages/Share/index.vue";
+import type { RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
+import SearchPageDetail from "@/pages/Search/_id/index.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     // Pages use the MainLayout.
-    path: '/',
+    path: "/",
     component: MainLayout,
     children: [
       {
-        path: '',
-        name: 'HomePage',
+        path: "",
+        name: "HomePage",
         component: HomePage,
       },
       {
-        path: '/search',
-        name: 'SearchPage',
+        path: "/search",
+        name: "SearchPage",
         component: SearchPage,
       },
       {
-        path: '/share',
-        name: 'SharePage',
+        path: "/search/:id",
+        name: "SearchPageDetail",
+        component: SearchPageDetail,
+      },
+      {
+        path: "/share",
+        name: "SharePage",
         component: SharePage,
-      },{
-        path: '/about',
-        name: 'AbouthPage',
+      },
+      {
+        path: "/about",
+        name: "AbouthPage",
         component: AbouthPage,
-      },{
-        path: '/faq',
-        name: 'FAQPage',
+      },
+      {
+        path: "/faq",
+        name: "FAQPage",
         component: FAQPage,
       },
     ],
   },
   {
-    path: '/login',
-    name: 'LoginPage',
+    path: "/login",
+    name: "LoginPage",
     component: LoginPage,
   },
   {
-    path: '/no-permission',
-    name: 'NoPermission',
+    path: "/no-permission",
+    name: "NoPermission",
     component: NoPermission,
   },
   // Catch-all for invalid routes.
   {
-    path: '/:pathMatch(.*)*',
-    name: 'NotFound',
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
     component: NotFound,
   },
 ];
@@ -69,15 +76,15 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   // If no route is matched, redirect to NotFound.
   if (!to.matched.length) {
-    next({ name: 'NotFound' });
+    next({ name: "NotFound" });
     return;
   }
   // For HomePage route, check if token exists in localStorage.
-  if (to.name === 'HomePage') {
-    if (localStorage.getItem('token')) {
+  if (to.name === "HomePage") {
+    if (localStorage.getItem("token")) {
       next(); // Token exists: allow navigation.
     } else {
-      next({ name: 'LoginPage' }); // No token: redirect.
+      next({ name: "LoginPage" }); // No token: redirect.
     }
   } else {
     // For all other routes, allow navigation.

@@ -13,6 +13,15 @@ export default {
         heading: {
           DEFAULT: "var(--color-heading)",
         },
+        gray: {
+          DEFAULT: "var(--color-gray)",
+        },
+        warning: {
+          500: "var(--color-warning-500)",
+        },
+        orange: {
+          500: "var(--color-orange-500)",
+        },
       },
     },
   },
