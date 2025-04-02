@@ -81,8 +81,9 @@ const router = useRouter();
 const route = useRoute();
 
 const isPathActive = (path: string) => {
-  return [path === route.path ? "text-primary" : "text-[#535C6B]"];
+  return route.path.startsWith(path) ? "text-primary" : "text-[#535C6B]";
 };
+
 const handleDirectPage = (item: any) => {
   router.push(item.link);
 };

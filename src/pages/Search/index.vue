@@ -191,7 +191,8 @@ const filteredProducts = computed(() => {
         <div
           v-for="(item, idx) in filteredProducts"
           :key="item.id"
-          class="p-4 border rounded-lg border-primary"
+          class="p-4 border rounded-lg border-primary cursor-pointer"
+          @click="$router.push(`/search/${item.id}`)"
         >
           <img
             :src="item.thumbnail"
