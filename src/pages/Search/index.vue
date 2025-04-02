@@ -188,32 +188,11 @@ const filteredProducts = computed(() => {
         v-if="filteredProducts.length > 0"
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6"
       >
-        <div
+        <ProductBox
           v-for="(item, idx) in filteredProducts"
           :key="item.id"
-          class="p-4 border rounded-lg border-primary cursor-pointer"
-          @click="$router.push(`/search/${item.id}`)"
-        >
-          <img
-            :src="item.thumbnail"
-            class="w-full aspect-[11/8] object-cover rounded-lg"
-          />
-
-          <div class="flex justify-between items-center mt-3">
-            <p class="text-base font-medium">{{ item.title }}</p>
-            <img :src="item.avatar" class="w-6 h-6 rounded-full" />
-          </div>
-
-          <div class="flex items-center gap-2 mt-4 text-sm text-[#535C6B]">
-            <MapPinIcon class="w-5 h-5 text-[#0164E3]" />
-            <span>{{ item.location }}</span>
-          </div>
-
-          <div class="flex items-center gap-2 mt-2 text-sm text-[#535C6B]">
-            <ClockIcon class="w-5 h-5 text-[#107569]" />
-            <span>{{ item.date }}</span>
-          </div>
-        </div>
+          :item="item"
+        />
       </div>
       <div
         v-else

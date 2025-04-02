@@ -10,6 +10,7 @@ import SharePage from "@pages/Share/index.vue";
 import type { RouteRecordRaw } from "vue-router";
 import { createRouter, createWebHistory } from "vue-router";
 import SearchPageDetail from "@/pages/Search/_id/index.vue";
+import PersonalPage from "@/pages/Personal/index.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -46,6 +47,11 @@ const routes: Array<RouteRecordRaw> = [
         path: "/faq",
         name: "FAQPage",
         component: FAQPage,
+      },
+      {
+        path: "/personal",
+        name: "PersonalPage",
+        component: PersonalPage,
       },
     ],
   },
