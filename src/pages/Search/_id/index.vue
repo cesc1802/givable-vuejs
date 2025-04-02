@@ -32,12 +32,6 @@ const safetyNote = [
               height: 455px;
             "
           ></div>
-
-          <!-- <img
-            src="/src/assets/images/product-8.jpg"
-            alt="Product"
-            class="w-full max-h-[455px] object-contain mx-auto"
-          /> -->
         </div>
         <p class="text-3xl font-semibold">Áo len kem</p>
         <p class="text-gray text-lg">

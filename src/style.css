@@ -6,7 +6,11 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   --color-primary: #00715d;
+  --color-primary-50: #c9e8dd;
   --color-primary-100: #0b5949;
+  --color-primary-200: #c3ddd4;
+  --color-primary-300: #0a4833;
+
   --color-ivory: #f9f4e8;
   --color-heading: #101828;
   --color-gray: #535c6b;

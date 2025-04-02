@@ -30,7 +30,11 @@
       </button>
       <div class="flex items-center gap-2">
         <img src="@assets/images/avatar.png" class="inline" />
-        <span class="text-[14px] text-primary">Giselle</span>
+        <span
+          class="text-[14px] text-primary cursor-pointer hover:underline"
+          @click="$router.push(`/personal`)"
+          >Giselle</span
+        >
       </div>
     </div>
   </div>
