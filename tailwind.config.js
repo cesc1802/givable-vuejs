@@ -25,6 +25,10 @@ export default {
         orange: {
           500: "var(--color-orange-500)",
         },
+        error: {
+          600: "var(--color-error-600)",
+          700: "var(--color-error-700)",
+        },
       },
     },
   },
