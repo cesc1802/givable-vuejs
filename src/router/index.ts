@@ -2,15 +2,18 @@ import MainLayout from "@layouts/MainLayout.vue";
 import AbouthPage from "@pages/About/index.vue";
 import FAQPage from "@pages/FAQ/index.vue";
 import HomePage from "@pages/HomePage/index.vue";
-import LoginPage from "@pages/LoginPage/index.vue";
+import LoginPage from "@/pages/Login/index.vue";
 import NoPermission from "@pages/NoPermission/index.vue";
 import NotFound from "@pages/NotFound/index.vue";
 import SearchPage from "@pages/Search/index.vue";
 import SharePage from "@pages/Share/index.vue";
 import type { RouteRecordRaw } from "vue-router";
 import { createRouter, createWebHistory } from "vue-router";
-import SearchPageDetail from "@/pages/Search/_id/index.vue";
 import PersonalPage from "@/pages/Personal/index.vue";
+import SearchPageDetail from "@/pages/Search/_id/index.vue";
+import RegisterPage from "@/pages/Register/index.vue";
+import VerifyPage from "@/pages/Verify/index.vue";
+import ProfileCreatePage from "@/pages/ProfileCreate/index.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -53,13 +56,29 @@ const routes: Array<RouteRecordRaw> = [
         name: "PersonalPage",
         component: PersonalPage,
       },
+      {
+        path: "/login",
+        name: "LoginPage",
+        component: LoginPage,
+      },
+      {
+        path: "/register",
+        name: "RegisterPage",
+        component: RegisterPage,
+      },
+      {
+        path: "/verify",
+        name: "VerifyPage",
+        component: VerifyPage,
+      },
+      {
+        path: "/profile-create",
+        name: "ProfileCreatePage",
+        component: ProfileCreatePage,
+      },
     ],
   },
-  {
-    path: "/login",
-    name: "LoginPage",
-    component: LoginPage,
-  },
+
   {
     path: "/no-permission",
     name: "NoPermission",
@@ -85,17 +104,18 @@ router.beforeEach((to, from, next) => {
     next({ name: "NotFound" });
     return;
   }
-  // For HomePage route, check if token exists in localStorage.
-  if (to.name === "HomePage") {
-    if (localStorage.getItem("token")) {
-      next(); // Token exists: allow navigation.
-    } else {
-      next({ name: "LoginPage" }); // No token: redirect.
-    }
-  } else {
-    // For all other routes, allow navigation.
-    next();
-  }
+  next();
+  // // For HomePage route, check if token exists in localStorage.
+  // if (to.name === "HomePage") {
+  //   if (localStorage.getItem("token")) {
+  //     next(); // Token exists: allow navigation.
+  //   } else {
+  //     next({ name: "LoginPage" }); // No token: redirect.
+  //   }
+  // } else {
+  //   // For all other routes, allow navigation.
+  //   next();
+  // }
 });
 
 export default router;

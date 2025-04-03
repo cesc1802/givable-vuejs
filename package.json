@@ -15,14 +15,15 @@
   },
   "dependencies": {
     "@primeuix/themes": "^1.0.0",
-    "@primevue/forms": "^4.3.3",
     "@tailwindcss/vite": "^4.0.17",
     "axios": "^1.8.3",
     "pinia": "^3.0.1",
     "primevue": "^4.3.3",
     "tailwindcss-primeui": "^0.6.1",
+    "vee-validate": "^4.15.0",
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "vue-router": "^4.5.0",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.5",
