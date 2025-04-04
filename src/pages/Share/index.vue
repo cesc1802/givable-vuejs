@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Form } from "@primevue/forms";
 import UploadIcon from "@/assets/icons/upload.svg";
 import { CATEGORIES_OPTION } from "@/constant/product";
 

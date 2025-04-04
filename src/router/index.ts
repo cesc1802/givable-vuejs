@@ -1,8 +1,9 @@
 import MainLayout from "@layouts/MainLayout.vue";
+import AuthLayout from "@/layouts/AuthLayout.vue";
 import AbouthPage from "@pages/About/index.vue";
 import FAQPage from "@pages/FAQ/index.vue";
 import HomePage from "@pages/HomePage/index.vue";
-import LoginPage from "@/pages/Login/index.vue";
+import LoginPage from "@/pages/Authorization/Login/index.vue";
 import NoPermission from "@pages/NoPermission/index.vue";
 import NotFound from "@pages/NotFound/index.vue";
 import SearchPage from "@pages/Search/index.vue";
@@ -11,9 +12,12 @@ import type { RouteRecordRaw } from "vue-router";
 import { createRouter, createWebHistory } from "vue-router";
 import PersonalPage from "@/pages/Personal/index.vue";
 import SearchPageDetail from "@/pages/Search/_id/index.vue";
-import RegisterPage from "@/pages/Register/index.vue";
-import VerifyPage from "@/pages/Verify/index.vue";
-import ProfileCreatePage from "@/pages/ProfileCreate/index.vue";
+import RegisterPage from "@/pages/Authorization/Register/index.vue";
+import VerifyEmailPage from "@/pages/Authorization/Verify/Email/index.vue";
+import VerifyPhonePage from "@/pages/Authorization/Verify/Phone/index.vue";
+import ProfileCreatePage from "@/pages/Authorization/ProfileCreate/index.vue";
+import ForgotPasswordPage from "@/pages/Authorization/ForgotPassword/index.vue";
+import RequestEmailOtpPage from "@/pages/Authorization/Verify/RequestEmailOtp/index.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -57,24 +61,45 @@ const routes: Array<RouteRecordRaw> = [
         component: PersonalPage,
       },
       {
-        path: "/login",
-        name: "LoginPage",
-        component: LoginPage,
-      },
-      {
-        path: "/register",
-        name: "RegisterPage",
-        component: RegisterPage,
-      },
-      {
-        path: "/verify",
-        name: "VerifyPage",
-        component: VerifyPage,
-      },
-      {
-        path: "/profile-create",
-        name: "ProfileCreatePage",
-        component: ProfileCreatePage,
+        path: "/auth",
+        component: AuthLayout,
+        children: [
+          {
+            path: "/login",
+            name: "LoginPage",
+            component: LoginPage,
+          },
+          {
+            path: "/register",
+            name: "RegisterPage",
+            component: RegisterPage,
+          },
+          {
+            path: "/verify-email",
+            name: "VerifyEmailPage",
+            component: VerifyEmailPage,
+          },
+          {
+            path: "/verify-phone",
+            name: "VerifyPhonePage",
+            component: VerifyPhonePage,
+          },
+          {
+            path: "/profile-create",
+            name: "ProfileCreatePage",
+            component: ProfileCreatePage,
+          },
+          {
+            path: "/forgot-password",
+            name: "ForgotPasswordPage",
+            component: ForgotPasswordPage,
+          },
+          {
+            path: "/request-email-otp",
+            name: "RequestEmailOtpPage",
+            component: RequestEmailOtpPage,
+          },
+        ],
       },
     ],
   },

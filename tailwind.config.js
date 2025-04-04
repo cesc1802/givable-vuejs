@@ -29,6 +29,9 @@ export default {
           600: "var(--color-error-600)",
           700: "var(--color-error-700)",
         },
+        "green-light": {
+          500: "var(--color-green-light-500)",
+        },
       },
     },
   },
