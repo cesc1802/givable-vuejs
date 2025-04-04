@@ -10,7 +10,8 @@ import SearchPage from "@pages/Search/index.vue";
 import SharePage from "@pages/Share/index.vue";
 import type { RouteRecordRaw } from "vue-router";
 import { createRouter, createWebHistory } from "vue-router";
-import PersonalPage from "@/pages/Personal/index.vue";
+import ProfileUserPage from "@/pages/ProfileUser/index.vue";
+import ProfileUserEditPage from "@/pages/ProfileUser/Edit/index.vue";
 import SearchPageDetail from "@/pages/Search/_id/index.vue";
 import RegisterPage from "@/pages/Authorization/Register/index.vue";
 import VerifyEmailPage from "@/pages/Authorization/Verify/Email/index.vue";
@@ -56,9 +57,14 @@ const routes: Array<RouteRecordRaw> = [
         component: FAQPage,
       },
       {
-        path: "/personal",
-        name: "PersonalPage",
-        component: PersonalPage,
+        path: "/profile",
+        name: "ProfileUserPage",
+        component: ProfileUserPage,
+      },
+      {
+        path: "/edit-profile",
+        name: "ProfileUserEditPage",
+        component: ProfileUserEditPage,
       },
       {
         path: "/auth",

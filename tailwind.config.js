@@ -17,6 +17,7 @@ export default {
           DEFAULT: "var(--color-heading)",
         },
         gray: {
+          500: "var(--color-gray-500)",
           DEFAULT: "var(--color-gray)",
         },
         warning: {

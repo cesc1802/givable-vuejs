@@ -61,7 +61,7 @@ const userMenuOptions = [
   {
     title: "Trang cá nhân",
     action: () => {
-      router.push("/personal");
+      router.push("/profile");
       op.value?.hide();
     },
   },
