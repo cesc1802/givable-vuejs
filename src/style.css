@@ -11,9 +11,16 @@
   --color-primary-200: #c3ddd4;
   --color-primary-300: #0a4833;
 
+  --color-error-600: #d92d20;
+  --color-error-700: #b42318;
+
+  --color-green-light-500: #66c61c;
+
   --color-ivory: #f9f4e8;
   --color-heading: #101828;
   --color-gray: #535c6b;
+  --color-gray-500: #667085;
+
   --color-warning-500: #f79009;
   --color-orange-500: #ef6820;
   --p-select-overlay-background: #f9f4e8 !important;
@@ -21,6 +28,8 @@
   --p-select-option-focus-background: #00715d !important;
   --p-select-option-focus-color: #f9f4e8 !important;
   --p-select-clear-icon-color: #00715d !important;
+
+  --p-popover-content-padding: 0 !important;
 }
 
 html.dark {

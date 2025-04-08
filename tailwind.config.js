@@ -17,6 +17,7 @@ export default {
           DEFAULT: "var(--color-heading)",
         },
         gray: {
+          500: "var(--color-gray-500)",
           DEFAULT: "var(--color-gray)",
         },
         warning: {
@@ -24,6 +25,13 @@ export default {
         },
         orange: {
           500: "var(--color-orange-500)",
+        },
+        error: {
+          600: "var(--color-error-600)",
+          700: "var(--color-error-700)",
+        },
+        "green-light": {
+          500: "var(--color-green-light-500)",
         },
       },
     },

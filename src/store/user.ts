@@ -1,15 +1,27 @@
-import type { IUserInfo } from '@model/user';
-import { defineStore } from 'pinia';
+import type { IUserFormRegister, IUserInfo } from "@model/user";
+import { defineStore } from "pinia";
 
 const initUserInfo: IUserInfo = {
-  id: '',
-  avatar: '',
-  name: '',
+  id: "",
+  avatar: "",
+  name: "",
 };
 
-export const useUserStore = defineStore('user', {
+const initUserFormRegister: IUserFormRegister = {
+  userFullName: "",
+  email: "",
+  password: "",
+  codeVerification: "",
+  phoneNumber: "",
+  address: "",
+  gender: "",
+  birthday: "",
+};
+
+export const useUserStore = defineStore("user", {
   state: () => ({
     userInfo: {} as IUserInfo,
+    userFormRegister: {} as IUserFormRegister,
   }),
   actions: {
     setUser(userInfo: IUserInfo) {
@@ -17,6 +29,16 @@ export const useUserStore = defineStore('user', {
     },
     clearUser() {
       this.userInfo = initUserInfo;
+    },
+    logout() {
+      this.userInfo = initUserInfo;
+      localStorage.removeItem("token");
+      localStorage.removeItem("userInfo");
+    },
+  },
+  getters: {
+    isLogin: (state) => {
+      return !!state.userInfo.id;
     },
   },
 });

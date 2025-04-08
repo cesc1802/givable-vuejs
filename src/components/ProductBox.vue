@@ -5,7 +5,7 @@ import MapPinIcon from "@/assets/icons/map-pin.svg";
 
 defineProps<{
   item: {
-    id: string;
+    id: string | number;
     thumbnail: string;
     title: string;
     avatar: string;

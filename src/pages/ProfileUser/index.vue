@@ -77,7 +77,7 @@ const productGave = ref([
       <h2 class="text-4xl text-heading font-semibold mt-2">Giselle</h2>
       <button
         class="flex items-center text-sm justify-center w-[190px] h-9 gap-3 bg-primary-50 border-primary-200 hover:bg-primary hover:text-ivory text-primary-300 rounded-[8px] transition cursor-pointer"
-        @click="() => $router.push('/profile-edit')"
+        @click="() => $router.push('/edit-profile')"
       >
         Chỉnh sửa hồ sơ cá nhân
       </button>
