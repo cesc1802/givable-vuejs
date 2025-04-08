@@ -68,7 +68,7 @@ const userMenuOptions = [
   {
     title: "Quản lý tài khoản",
     action: () => {
-      router.push("/account-management");
+      router.push("/management/account-management");
       op.value?.hide();
     },
   },
