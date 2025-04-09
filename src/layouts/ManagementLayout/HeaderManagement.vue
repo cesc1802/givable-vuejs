@@ -33,7 +33,7 @@ const titlePage = computed(() => getPageTitle(String(route.name ?? "")));
     </div>
 
     <button
-      class="flex items-center justify-center w-[176px] h-9 gap-2 bg-primary text-white rounded-[8px] hover:bg-primary transition cursor-pointer mt-3"
+      class="flex items-center justify-center w-[176px] h-9 gap-2 bg-primary text-ivory dark:text-primary-500 rounded-[8px] hover:bg-primary transition cursor-pointer mt-3"
       @click="() => (visible = true)"
     >
       Tạo tài khoản mới <span class="text-2xl -mt-[6px]">+</span>
@@ -43,7 +43,12 @@ const titlePage = computed(() => getPageTitle(String(route.name ?? "")));
 
 <style scoped>
 .breadcumb {
-  --p-breadcrumb-background: var(--color-ivory);
+  --p-breadcrumb-background: transparent;
+  --p-breadcrumb-item-color: var(--color-gray);
   --p-breadcrumb-padding: 0;
+}
+
+.dark .breadcumb {
+  --p-breadcrumb-item-color: var(--color-ivory);
 }
 </style>

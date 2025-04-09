@@ -125,7 +125,7 @@ const userMenuOptions = [
       <div v-if="userStore.isLogin" class="flex items-center gap-2">
         <img src="@assets/images/avatar.png" class="inline" />
         <div
-          class="flex items-center gap-2 cursor-pointer hover:underline"
+          class="flex items-center gap-2 cursor-pointer decoration-primary hover:underline dark:decoration-ivory"
           @click="toggle"
         >
           <span class="text-[14px] text-primary">Giselle </span>
@@ -138,7 +138,7 @@ const userMenuOptions = [
               <li
                 v-for="(item, index) in userMenuOptions"
                 :key="index"
-                class="hover:text-primary cursor-pointer"
+                class="hover:text-primary cursor-pointer dark:hover:text-primary-500"
                 @click="item.action"
               >
                 {{ item.title }}

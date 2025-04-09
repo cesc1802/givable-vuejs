@@ -18,16 +18,14 @@ const menuSidebar = [
 
 const isPathActive = (path: string) => {
   return route.path.match(path)
-    ? "bg-primary text-ivory"
+    ? "bg-primary text-ivory dark:text-primary-500 "
     : "hover:text-primary text-primary";
 };
 </script>
 <template>
   <!-- Sidebar -->
-  <aside
-    class="w-64 bg-ivory p-4 flex flex-col gap-4 border-r border-[#F0E4C7]"
-  >
-    <h1 class="text-xl font-bold py-[10px] px-2">Menu</h1>
+  <aside class="w-64 p-4 flex flex-col gap-4 border-r border-[#F0E4C7]">
+    <h1 class="text-xl font-bold py-[10px] px-2 text-heading">Menu</h1>
     <ul class="flex flex-col gap-3">
       <li
         v-for="(item, index) in menuSidebar"

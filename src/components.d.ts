@@ -13,8 +13,6 @@ declare module 'vue' {
     BPagination: typeof import('./components/base/BPagination/index.vue')['default']
     BSelect: typeof import('./components/base/BSelect/index.vue')['default']
     BTextarea: typeof import('./components/base/BTextarea/index.vue')['default']
-    ConfirmDialog: typeof import('./components/Overlay/ConfirmDialog.vue')['default']
-    ConfirmOverlay: typeof import('./components/Overlay/ConfirmOverlay.vue')['default']
     ConfirmOverlayDialog: typeof import('./components/Overlay/ConfirmOverlayDialog.vue')['default']
     Footer: typeof import('./components/Footer/index.vue')['default']
     Header: typeof import('./components/Header/index.vue')['default']

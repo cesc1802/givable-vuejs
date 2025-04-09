@@ -1,10 +1,10 @@
 <template>
-  <div class="flex min-h-screen">
+  <div class="flex bg-ivory dark:bg-primary-400">
     <!-- Sidebar -->
     <SidebarManagement />
 
     <!-- Main Content -->
-    <main class="flex-1 p-6 bg-ivory">
+    <main class="flex-1 p-6">
       <!-- Header  -->
       <HeaderManagement />
 

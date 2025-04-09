@@ -21,6 +21,7 @@
   --color-heading: #101828;
   --color-gray: #535c6b;
   --color-gray-100: #f2f4f7;
+  --color-gray-200: #647474;
   --color-gray-500: #667085;
   --color-gray-700: #344054;
 
@@ -33,6 +34,9 @@
   --p-select-clear-icon-color: #00715d !important;
 
   --p-popover-content-padding: 0 !important;
+
+  --p-datatable-row-background-color: transparent;
+  --p-datatable-row-background: transparent !important;
 }
 
 html.dark {
