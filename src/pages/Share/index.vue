@@ -25,7 +25,7 @@ const initialValues = ref({
       <div class="absolute inset-0 bg-[#06372DA6]"></div>
 
       <div
-        class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white"
+        class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white dark:text-ivory"
       >
         <h1 class="text-5xl font-bold mb-4">Chia sẻ vật phẩm</h1>
         <p class="text-xl max-w-2xl mx-auto leading-relaxed">
@@ -41,7 +41,7 @@ const initialValues = ref({
         <Form v-slot="$form" :initialValues="initialValues">
           <div class="space-y-4">
             <div>
-              <div class="mb-1 font-medium">Tiêu đề</div>
+              <div class="mb-1 font-medium text-heading">Tiêu đề</div>
               <BInput
                 v-model="initialValues.title"
                 name="title"
@@ -53,7 +53,7 @@ const initialValues = ref({
             </div>
 
             <div>
-              <div class="mb-1 font-medium">Mô tả</div>
+              <div class="mb-1 font-medium text-heading">Mô tả</div>
               <BTextarea
                 v-model="initialValues.descriptions"
                 name="descriptions"
@@ -64,7 +64,7 @@ const initialValues = ref({
             </div>
 
             <div>
-              <div class="mb-1 font-medium">Phân loại</div>
+              <div class="mb-1 font-medium text-heading">Phân loại</div>
               <BSelect
                 v-model="initialValues.category"
                 name="category"
@@ -78,7 +78,7 @@ const initialValues = ref({
             </div>
 
             <div>
-              <div class="mb-1 font-medium">Địa điểm</div>
+              <div class="mb-1 font-medium text-heading">Địa điểm</div>
               <BInput
                 v-model="searchValue"
                 class="w-full"
@@ -89,19 +89,21 @@ const initialValues = ref({
             </div>
 
             <div>
-              <div class="mb-2 font-medium">Hình ảnh</div>
+              <div class="mb-2 font-medium text-heading">Hình ảnh</div>
               <div
                 class="h-[200px] w-[200px] flex justify-center items-center border-dashed border-[1px] border-primary cursor-pointer bg-transparent"
               >
                 <div class="w-16 h-16 p-[15px] rounded-full bg-primary border">
-                  <UploadIcon class="w-8 h-8 text-ivory" />
+                  <UploadIcon
+                    class="w-8 h-8 text-ivory dark:text-primary-500"
+                  />
                 </div>
               </div>
             </div>
 
             <div>
               <button
-                class="flex items-center justify-center w-[82px] h-[40px] gap-3 bg-primary text-white rounded-[8px] hover:bg-primary transition cursor-pointer"
+                class="flex items-center justify-center w-[82px] h-[40px] gap-3 bg-primary text-white dark:text-primary-500 rounded-[8px] hover:bg-primary transition cursor-pointer"
               >
                 Chia sẻ
               </button>
@@ -129,13 +131,4 @@ const initialValues = ref({
   </div>
 </template>
 
-<style scoped>
-.share-page {
-  --p-inputtext-border-color: var(--color-primary);
-  --p-inputtext-background: transparent;
-  --p-inputtext-border-color: var(--color-primary);
-  --p-inputtext-focus-border-color: var(--color-primary);
-  --p-inputtext-hover-border-color: var(--color-primary);
-  --p-inputtext-placeholder-color: var(--color-gray);
-}
-</style>
+<style scoped></style>

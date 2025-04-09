@@ -33,12 +33,12 @@ const safetyNote = [
             "
           ></div>
         </div>
-        <p class="text-3xl font-semibold">Áo len kem</p>
-        <p class="text-gray text-lg">
+        <p class="text-3xl font-semibold text-heading">Áo len kem</p>
+        <p class="text-heading text-lg">
           Đây là một chiếc áo len đã qua sử dụng, chất liệu vẫn còn tốt và giữ
           ấm hiệu quả.
         </p>
-        <div class="flex flex-col gap-2 text-sm text-gray">
+        <div class="flex flex-col gap-2 text-sm text-heading">
           <div class="flex items-center gap-2">
             <MapPinIcon class="w-5 h-5 text-[#0164E3]" />
             <span>Tân Phú, Hồ Chí Minh </span>
@@ -54,7 +54,7 @@ const safetyNote = [
           </div>
         </div>
         <button
-          class="flex items-center justify-center w-[190px] h-9 gap-3 bg-primary text-white rounded-[8px] hover:bg-primary transition cursor-pointer mt-3"
+          class="flex items-center justify-center w-[190px] h-9 gap-3 bg-primary text-white dark:text-primary-500 rounded-[8px] hover:bg-primary transition cursor-pointer mt-3"
         >
           Đăng ký nhận vật phẩm
         </button>
@@ -63,7 +63,9 @@ const safetyNote = [
     <div class="lg:col-span-1">
       <QuickGuide class="p-6" />
       <div class="p-6">
-        <h2 class="text-2xl font-semibold mb-4 flex items-center gap-3">
+        <h2
+          class="text-2xl font-semibold text-heading mb-4 flex items-center gap-3"
+        >
           <AlertTriangleIcon class="w-8 h-8 text-warning-500" />
           Lưu ý an toàn
         </h2>
@@ -71,7 +73,7 @@ const safetyNote = [
           <li
             v-for="(note, idx) in safetyNote"
             :key="idx"
-            class="text-gray list-disc"
+            class="text-heading list-disc"
           >
             {{ note }}
           </li>

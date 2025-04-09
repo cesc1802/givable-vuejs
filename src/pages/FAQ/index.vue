@@ -8,11 +8,11 @@
     <div class="grid grid-cols-2 gap-4 items-start">
       <!-- Lặp 4 khối FAQ -->
       <div
-        class="faq-box border border-[#00715d] rounded-lg overflow-hidden flex flex-col"
+        class="faq-box border border-[#00715d] dark:border-ivory rounded-lg overflow-hidden flex flex-col"
         v-for="(faq, i) in faqs"
         :key="i"
       >
-        <h3 class="faq-box-title text-2xl p-4 font-semibold">
+        <h3 class="faq-box-title text-2xl p-4 font-semibold text-heading">
           {{ faq.title }}
         </h3>
 
@@ -23,12 +23,12 @@
             :value="j.toString()"
           >
             <AccordionHeader>
-              <p class="text-[18px] font-medium text-[#101828] ml-[-16px]">
+              <p class="text-[18px] font-medium text-heading ml-[-16px]">
                 {{ item.question }}
               </p>
             </AccordionHeader>
             <AccordionContent>
-              <p class="m-0 text-sm text-[#535C6B] ml-[-16px]">
+              <p class="m-0 text-sm text-heading ml-[-16px]">
                 {{ item.answer }}
               </p>
             </AccordionContent>
@@ -122,6 +122,11 @@ const faqs = ref([
   background-color: transparent;
   display: flex;
   flex-direction: column;
+
+  --p-accordion-header-toggle-icon-color: var(--color-heading);
+  --p-accordion-header-toggle-icon-hover-color: var(--color-heading);
+  --p-accordion-header-toggle-icon-active-color: var(--color-heading);
+  --p-accordion-header-toggle-icon-active-hover-color: var(--color-heading);
 }
 ::v-deep(.p-accordion) {
   border: none;
@@ -131,7 +136,7 @@ const faqs = ref([
 
 ::v-deep(.p-accordionpanel) {
   background-color: transparent !important;
-  border-bottom: 1px solid #00715d;
+  border-bottom: 1px solid var(--color-primary);
   margin-bottom: 16px;
   overflow: hidden;
 }

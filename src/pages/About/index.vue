@@ -4,10 +4,12 @@
       class="container mx-auto grid grid-cols-1 md:grid-cols-3 items-center gap-8"
     >
       <div class="flex-row justify-center items-center col-span-2">
-        <h2 class="text-primary font-bold text-4xl mb-6 text-center">
+        <h2
+          class="text-primary dark:text-ivory font-bold text-4xl mb-6 text-center"
+        >
           Givables
         </h2>
-        <div class="text-[#535C6B] text-2xl leading-8 text-center">
+        <div class="text-heading text-2xl leading-8 text-center">
           Givables là nền tảng kết nối những người muốn cho đi vật phẩm với
           những người đang cần. Chúng tôi tin rằng việc cho và nhận không chỉ
           giúp tiết kiệm tài nguyên mà còn xây dựng một cộng đồng gắn kết và yêu
@@ -23,16 +25,21 @@
 
   <!-- COMMITMENT INFORMAITON -->
   <section>
-    <div class="grid grid-cols-4 bg-primary-100 px-[184.5px] py-[44px]">
+    <div
+      class="grid grid-cols-4 bg-primary-100 px-[184.5px] py-[44px] dark:bg-[#0A604F]"
+    >
       <div
         v-for="(item, idx) in COMMITMENT_INFORMAITON"
         :key="idx"
         class="items-center gap-[20px] flex flex-col justify-center text-center"
       >
-        <component :is="item.icon" class="text-white w-[100px] h-[100px]" />
+        <component
+          :is="item.icon"
+          class="text-white dark:text-ivory w-[100px] h-[100px]"
+        />
 
         <div>
-          <p class="text-[#F9F4E8] text-[20px] mb-1">
+          <p class="text-ivory text-[20px] mb-1">
             {{ item.label }}
           </p>
         </div>
@@ -53,12 +60,12 @@
           class="max-w-[338px] flex flex-col gap-2"
         >
           <template #header>
-            <div class="font-semibold text-lg">
+            <div class="font-semibold text-lg text-heading">
               {{ idx + 1 }}. {{ item.label }}
             </div>
           </template>
           <template #content>
-            <div class="text-[#535C6B] mt-2">
+            <div class="text-heading mt-2">
               {{ item.description }}
             </div>
           </template>
@@ -105,12 +112,12 @@
           class="max-w-[338px] flex flex-col gap-2"
         >
           <template #header>
-            <div class="font-semibold text-lg">
+            <div class="font-semibold text-lg text-heading">
               {{ idx + 1 }}. {{ item.label }}
             </div>
           </template>
           <template #content>
-            <div class="text-[#535C6B] mt-2">
+            <div class="text-heading mt-2">
               {{ item.description }}
             </div>
           </template>
@@ -139,15 +146,15 @@
       class="grid grid-cols-1 md:grid-cols-2 items-center gap-8 p-[44px] bg-primary-100 text-white"
     >
       <div class="flex flex-col gap-5 items-center col-span-2">
-        <h2 class="text-3xl font-semibold">Nguyên tắc sử dụng</h2>
+        <h2 class="text-3xl font-semibold text-ivory">Nguyên tắc sử dụng</h2>
         <div class="relative w-full flex items-center justify-center">
-          <GiftIcon class="w-24 h-24" />
+          <GiftIcon class="w-24 h-24 text-ivory" />
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div
             v-for="(item, idx) in RULES_OF_USE"
             :key="idx"
-            class="flex flex-col gap-2 px-10 py-8 border border-dashed rounded-lg border-[#F9F4E8] text-[#F9F4E8]"
+            class="flex flex-col gap-2 px-10 py-8 border border-dashed rounded-lg border-ivory text-ivory"
           >
             <h3 class="text-2xl font-semibold text-center mb-2">
               {{ item.title }}

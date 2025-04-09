@@ -75,7 +75,10 @@ const selectClass = computed(() => {
         <slot name="option" :option="slotProps.option">
           <div class="flex items-center justify-between w-full">
             <div class="custom-option">{{ slotProps.option[optionLabel] }}</div>
-            <CheckIcon v-if="slotProps.selected" class="w-5 h-5 text-primary" />
+            <CheckIcon
+              v-if="slotProps.selected"
+              class="w-5 h-5 text-primary dark:text-ivory"
+            />
           </div>
         </slot>
       </template>
@@ -98,13 +101,22 @@ const selectClass = computed(() => {
 .custom-select-wrapper {
   width: 100%;
   position: relative;
+
+  --p-select-color: var(--color-primary);
+  --p-select-placeholder-color: var(--color-gray);
+  --p-select-dropdown-color: var(--color-primary);
+  --p-select-clear-icon-color: var(--color-primary);
+}
+
+.dark .custom-select-wrapper {
+  --p-select-placeholder-color: var(--color-ivory);
 }
 
 .custom-select {
   width: 100%;
   transition: all 0.2s;
   border: 1px solid var(--color-primary) !important;
-  background-color: var(--color-ivory) !important;
+  background-color: transparent !important;
 }
 
 .custom-select-wrapper .p-select.p-disabled {

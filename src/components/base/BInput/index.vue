@@ -32,3 +32,18 @@ defineEmits(["update:modelValue"]);
     />
   </div>
 </template>
+
+<style scoped>
+.b-input-wrapper {
+  --p-inputtext-border-color: var(--color-primary);
+  --p-inputtext-background: transparent;
+  --p-inputtext-border-color: var(--color-primary);
+  --p-inputtext-focus-border-color: var(--color-primary);
+  --p-inputtext-hover-border-color: var(--color-primary);
+  --p-inputtext-placeholder-color: var(--color-gray);
+}
+
+.dark .b-input-wrapper {
+  --p-inputtext-placeholder-color: var(--color-ivory);
+}
+</style>

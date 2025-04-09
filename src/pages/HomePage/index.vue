@@ -10,12 +10,12 @@
       <div class="absolute inset-0 bg-[#06372DA6]"></div>
 
       <div
-        class="relative z-10 flex flex-col items-center justify-center h-full text-center text-[#F9F4E8]"
+        class="relative z-10 flex flex-col items-center justify-center h-full text-center text-ivory"
       >
         <h2 class="text-4xl font-bold">
           Nền tảng trao và nhận đồ
           <span
-            class="bg-[#F9F4E8] text-primary px-2 rounded-md tracking-[-0.96px]"
+            class="bg-ivory text-primary dark:text-primary-500 px-2 rounded-md tracking-[-0.96px]"
             >miễn phí</span
           >
         </h2>
@@ -25,12 +25,12 @@
         </p>
         <div class="mt-8 flex gap-4">
           <button
-            class="bg-primary text-white font-bold px-6 py-3 rounded-full shadow-md hover:bg-primary transition cursor-pointer"
+            class="bg-primary dark:bg-primary-500 text-white font-medium px-6 py-3 rounded-full shadow-md hover:bg-primary transition cursor-pointer"
           >
             Chia sẻ vật phẩm
           </button>
           <button
-            class="border border-white text-white font-bold px-6 py-3 rounded-full shadow-md hover:bg-white hover:text-primary transition cursor-pointer"
+            class="border border-white text-white font-medium px-6 py-3 rounded-full shadow-md hover:bg-white hover:text-primary transition cursor-pointer"
           >
             Tìm vật phẩm
           </button>
@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <div class="bg-[#F9F4E8]">
+    <div class="bg-ivory dark:bg-primary-400">
       <div class="grid grid-cols-3 max-w-screen-xl mx-auto py-[44px] gap-x-8">
         <div
           v-for="item in items"
@@ -46,14 +46,19 @@
           class="flex items-center gap-[24px]"
         >
           <div class="p-[10px] bg-primary rounded-lg">
-            <component :is="item.icon" class="text-white w-8 h-8" />
+            <component
+              :is="item.icon"
+              class="text-white dark:text-primary-500 w-8 h-8"
+            />
           </div>
 
           <div>
-            <p class="text-[#101828] text-lg font-semibold mb-1">
+            <p
+              class="text-[#101828] dark:text-ivory text-lg font-semibold mb-1"
+            >
               {{ item.label }}
             </p>
-            <p class="text-[#535C6B] text-[16px] max-w-[360px]">
+            <p class="text-gray dark:text-ivory text-[16px] max-w-[360px]">
               {{ item.description }}
             </p>
           </div>
@@ -70,17 +75,17 @@
         <component :is="item.icon" class="text-white w-16 h-16" />
 
         <div>
-          <p class="text-[#F9F4E8] text-[30px] font-semibold mb-1">
+          <p class="text-ivory text-[30px] font-semibold mb-1">
             {{ item.label }}
           </p>
-          <p class="text-[#F9F4E8] text-[16px]">{{ item.description }}</p>
+          <p class="text-ivory text-[16px]">{{ item.description }}</p>
         </div>
       </div>
     </div>
 
     <section>
       <div
-        class="flex items-center justify-center bg-[#fdf5ec] py-12 px-6 relative"
+        class="flex items-center justify-center bg-[#fdf5ec] dark:bg-primary-400 py-12 px-6 relative"
       >
         <div
           class="absolute inset-0 bg-[url('/src/assets/images/background-volunteer-holding-box.svg')] bg-no-repeat bg-cover bg-center opacity-40"
@@ -99,12 +104,12 @@
 
           <div class="text-left">
             <h2
-              class="text-3xl md:text-4xl font-bold text-[#1f2937] tracking-[-0.96px]"
+              class="text-3xl md:text-4xl font-bold text-heading dark:text-ivory tracking-[-0.96px]"
             >
               Chia sẻ vật phẩm
             </h2>
             <p
-              class="text-[#4b5563] mt-3 text-lg leading-relaxed max-w-[450px]"
+              class="text-gray dark:text-ivory mt-3 text-lg leading-relaxed max-w-[450px]"
             >
               Bạn có thể tìm kiếm hoặc chia sẻ các sản phẩm tại đây, góp phần
               lan tỏa yêu thương và giúp đỡ những người có hoàn cảnh khó khăn.
@@ -117,7 +122,7 @@
                 <SearchIcon class="w-5 h-5" /> Tìm kiếm
               </button>
               <button
-                class="flex items-center justify-center w-[191px] gap-3 bg-primary text-white px-[28px] py-4 rounded-[8px] hover:bg-primary transition cursor-pointer"
+                class="flex items-center justify-center w-[191px] gap-3 bg-primary text-white dark:text-primary-500 px-[28px] py-4 rounded-[8px] hover:bg-primary transition cursor-pointer"
               >
                 <GiftIcon class="w-5 h-5" /> Chia sẻ
               </button>
@@ -128,12 +133,14 @@
     </section>
 
     <section>
-      <div class="bg-primary flex-row justify-center items-center gap-8">
-        <h1 class="text-[60px] font-bold text-[#F9F4E8] mb-6">
+      <div
+        class="bg-primary dark:bg-primary-100 flex-row justify-center items-center gap-8"
+      >
+        <h1 class="text-[60px] font-bold text-ivory mb-6">
           Tham gia cộng đồng
         </h1>
         <p
-          class="px-[200px] mb-6 text-center text-4xl text-[#F9F4E8] flex items-center justify-center"
+          class="px-[200px] mb-6 text-center text-4xl text-ivory flex items-center justify-center"
         >
           <span class="w-[1040px]">
             Nếu bạn có vật phẩm cần cho, hãy chia sẻ để xây dựng một cộng đồng
@@ -142,7 +149,7 @@
         </p>
         <p class="justify-center flex items-center mb-8">
           <button
-            class="border-primary bg-[#F9F4E8] py-4 px-[28px] w-[190px] rounded-[25px] text-primary text-[20px] cursor-pointer"
+            class="border-primary bg-ivory py-4 px-[28px] w-[190px] rounded-[25px] text-primary dark:text-primary-500 text-[20px] cursor-pointer"
             style="box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05)"
           >
             Đăng ký ngay

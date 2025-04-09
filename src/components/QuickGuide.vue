@@ -29,7 +29,7 @@ const steps = [
     >
       <div class="relative z-10">
         <div
-          class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-semibold"
+          class="w-8 h-8 rounded-full bg-primary text-white dark:text-primary-500 flex items-center justify-center text-sm font-semibold"
         >
           {{ index + 1 }}
         </div>
@@ -44,7 +44,7 @@ const steps = [
         <h4 class="font-semibold text-base text-heading">
           {{ step.title }}
         </h4>
-        <p class="text-sm text-[#535C6B] mt-1 leading-relaxed">
+        <p class="text-sm mt-1 leading-relaxed text-heading">
           {{ step.desc }}
         </p>
       </div>
