@@ -19,6 +19,10 @@ import VerifyPhonePage from "@/pages/Authorization/Verify/Phone/index.vue";
 import ProfileCreatePage from "@/pages/Authorization/ProfileCreate/index.vue";
 import ForgotPasswordPage from "@/pages/Authorization/ForgotPassword/index.vue";
 import RequestEmailOtpPage from "@/pages/Authorization/Verify/RequestEmailOtp/index.vue";
+import AccountManagementPage from "@/pages/Management/Account/index.vue";
+import ManagementLayout from "@/layouts/ManagementLayout.vue";
+import ProductManagementPage from "@/pages/Management/Product/index.vue";
+import { PageKey } from "./type";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -104,6 +108,23 @@ const routes: Array<RouteRecordRaw> = [
             path: "/request-email-otp",
             name: "RequestEmailOtpPage",
             component: RequestEmailOtpPage,
+          },
+        ],
+      },
+
+      {
+        path: "/management",
+        component: ManagementLayout,
+        children: [
+          {
+            path: "/management/account-management",
+            name: PageKey.AccountManagement,
+            component: AccountManagementPage,
+          },
+          {
+            path: "/management/product-management",
+            name: PageKey.ProductManagement,
+            component: ProductManagementPage,
           },
         ],
       },

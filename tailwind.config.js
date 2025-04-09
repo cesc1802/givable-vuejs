@@ -1,4 +1,5 @@
 export default {
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -8,6 +9,8 @@ export default {
           100: "var(--color-primary-100)",
           200: "var(--color-primary-200)",
           300: "var(--color-primary-300)",
+          400: "var(--color-primary-400)",
+          500: "var(--color-primary-500)",
           DEFAULT: "var(--color-primary)",
         },
         ivory: {
@@ -17,7 +20,9 @@ export default {
           DEFAULT: "var(--color-heading)",
         },
         gray: {
+          100: "var(--color-gray-100)",
           500: "var(--color-gray-500)",
+          700: "var(--color-gray-700)",
           DEFAULT: "var(--color-gray)",
         },
         warning: {

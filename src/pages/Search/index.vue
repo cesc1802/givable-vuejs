@@ -125,7 +125,7 @@ const filteredProducts = computed(() => {
     <div class="absolute inset-0 bg-[#06372DA6]"></div>
 
     <div
-      class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white"
+      class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white dark:text-ivory"
     >
       <h1 class="text-5xl font-bold mb-4">Tìm kiếm vật phẩm</h1>
       <p class="text-xl max-w-2xl mx-auto leading-relaxed">

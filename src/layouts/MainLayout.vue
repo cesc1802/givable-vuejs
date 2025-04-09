@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import Header from "@components/Header/index.vue";
 import Footer from "@components/Footer/index.vue";
+import Header from "@components/Header/index.vue";
 import "./styles.css";
 </script>
 
 <template>
   <div class="h-screen flex flex-col">
-    <header class="header bg-[#F9F4E8]">
+    <header class="header bg-ivory dark:bg-primary-400">
       <slot name="header">
         <Header />
       </slot>
@@ -19,7 +19,7 @@ import "./styles.css";
       </aside> -->
       <main>
         <div
-          class="flex items-center justify-center bg-[#fdf5ec] relative min-h-[calc(100vh-362px)]"
+          class="flex items-center justify-center bg-[#fdf5ec] dark:bg-primary-400 relative min-h-[calc(100vh-362px)]"
         >
           <div
             class="absolute inset-0 bg-[url('/src/assets/images/background-volunteer-holding-box.svg')] bg-no-repeat bg-cover bg-center opacity-40"

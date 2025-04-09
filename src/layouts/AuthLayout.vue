@@ -19,7 +19,7 @@
 
       <!-- Centered Content -->
       <div
-        class="relative z-10 flex flex-col items-center justify-center min-h-screen text-center text-[#F9F4E8]"
+        class="relative z-10 flex flex-col items-center justify-center min-h-screen text-center text-ivory"
       >
         <div
           class="p-10 border-2 border-white rounded-[40px] bg-[linear-gradient(159deg,rgba(255,255,255,0.4)_3.01%,rgba(255,255,255,0)_103.3%)] backdrop-blur-[21px]"

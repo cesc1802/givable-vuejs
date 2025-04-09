@@ -91,4 +91,8 @@ const textareaClass = computed(() => {
 .b-textarea-error:focus {
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
+
+.dark .b-textarea-wrapper {
+  --p-textarea-placeholder-color: var(--color-ivory);
+}
 </style>
