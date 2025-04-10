@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { InputNumber } from "primevue";
+
 const codeVerify = ref(123);
 </script>
 
@@ -15,7 +17,7 @@ const codeVerify = ref(123);
     <div class="flex flex-col gap-3">
       <div class="text-sm form-input">
         <div class="mb-2">Mã xác thực</div>
-        <BInput
+        <InputNumber
           v-model="codeVerify"
           class="w-full"
           placeholder="Nhập mã"
@@ -40,4 +42,14 @@ const codeVerify = ref(123);
   </form>
 </template>
 
-<style scoped></style>
+<style scoped>
+.form {
+  --p-inputtext-border-color: var(--color-ivory);
+  --p-inputtext-placeholder-color: var(--color-ivory);
+  --p-inputtext-background: transparent;
+  --p-inputtext-border-color: var(--color-ivory);
+  --p-inputtext-focus-border-color: var(--color-ivory);
+  --p-inputtext-hover-border-color: var(--color-ivory);
+  --p-inputtext-color: var(--color-ivory);
+}
+</style>

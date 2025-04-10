@@ -156,7 +156,7 @@ const userMenuOptions = [
           <p class="text-sm">Đăng nhập</p>
         </div>
         <div
-          class="flex items-center gap-3 text-ivory px-[14px] py-[8px] bg-primary rounded-lg cursor-pointer"
+          class="flex items-center gap-3 text-ivory dark:text-primary-500 px-[14px] py-[8px] bg-primary rounded-lg cursor-pointer"
           @click="() => router.push('/register')"
         >
           <UserPlusIcon class="w-4 h-4" />

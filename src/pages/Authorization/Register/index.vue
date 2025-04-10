@@ -5,6 +5,7 @@ import * as yup from "yup";
 import CheckIcon from "@/assets/icons/check.svg";
 import XIcon from "@/assets/icons/x-icon.svg";
 import router from "@/router";
+import { InputText } from "primevue";
 
 const userStore = useUserStore();
 
@@ -90,7 +91,7 @@ const passwordRulesList = computed(() => [
       <div class="form-input text-sm">
         <label class="mb-2">Họ và tên</label>
         <Field v-slot="{ field, meta }" name="fullName">
-          <BInput
+          <InputText
             v-bind="field"
             class="w-full"
             placeholder="Nhập họ và tên của bạn"
@@ -103,7 +104,7 @@ const passwordRulesList = computed(() => [
       <div class="form-input text-sm">
         <label class="mb-2">Email</label>
         <Field v-slot="{ field, meta }" name="email">
-          <BInput
+          <InputText
             v-bind="field"
             class="w-full"
             placeholder="Nhập email của bạn"
@@ -115,7 +116,7 @@ const passwordRulesList = computed(() => [
       <div class="text-sm">
         <label class="mb-2">Mật khẩu</label>
         <Field v-slot="{ meta }" name="password">
-          <BInput
+          <InputText
             v-model="password"
             type="password"
             class="w-full"
@@ -155,4 +156,14 @@ const passwordRulesList = computed(() => [
   </form>
 </template>
 
-<style scoped></style>
+<style scoped>
+.form {
+  --p-inputtext-border-color: var(--color-ivory);
+  --p-inputtext-placeholder-color: var(--color-ivory);
+  --p-inputtext-background: transparent;
+  --p-inputtext-border-color: var(--color-ivory);
+  --p-inputtext-focus-border-color: var(--color-ivory);
+  --p-inputtext-hover-border-color: var(--color-ivory);
+  --p-inputtext-color: var(--color-ivory);
+}
+</style>

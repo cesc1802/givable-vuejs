@@ -1,40 +1,30 @@
-<script lang="ts">
+<script lang="ts" setup>
 import { useUserStore } from "@store/user";
+import { InputText } from "primevue";
 
-export default defineComponent({
-  name: "LoginPage",
-  setup() {
-    const email = ref("");
-    const password = ref("");
-    const userStore = useUserStore();
-    const router = useRouter();
+const email = ref("");
+const password = ref("");
+const userStore = useUserStore();
+const router = useRouter();
 
-    const handleLogin = () => {
-      const fakeToken = "fake-jwt-token";
-      const fakeUserInfo = {
-        id: "1",
-        avatar: "https://via.placeholder.com/40",
-        name: "John Doe",
-      };
+const handleLogin = () => {
+  const fakeToken = "fake-jwt-token";
+  const fakeUserInfo = {
+    id: "1",
+    avatar: "https://via.placeholder.com/40",
+    name: "John Doe",
+  };
 
-      localStorage.setItem("token", fakeToken);
-      localStorage.setItem("userInfo", JSON.stringify(fakeUserInfo));
-      userStore.setUser(fakeUserInfo);
-      router.push({ name: "HomePage" });
-    };
-
-    return {
-      email,
-      password,
-      handleLogin,
-    };
-  },
-});
+  localStorage.setItem("token", fakeToken);
+  localStorage.setItem("userInfo", JSON.stringify(fakeUserInfo));
+  userStore.setUser(fakeUserInfo);
+  router.push({ name: "HomePage" });
+};
 </script>
 
 <template>
   <Form
-    class="form text-ivory p-3 text-start flex flex-col gap-3 w-[320px]"
+    class="form-login text-ivory p-3 text-start flex flex-col gap-3 w-[320px]"
     @keydown.prevent.enter="handleLogin"
   >
     <div>
@@ -47,7 +37,8 @@ export default defineComponent({
     <div class="flex flex-col gap-3">
       <div class="text-sm form-input">
         <div class="mb-2">Email</div>
-        <BInput
+
+        <InputText
           v-model="email"
           name="title"
           class="w-full"
@@ -58,7 +49,7 @@ export default defineComponent({
       </div>
       <div class="text-sm">
         <div class="mb-2">Mật khẩu</div>
-        <BInput
+        <InputText
           v-model="password"
           name="title"
           class="w-full"
@@ -90,4 +81,14 @@ export default defineComponent({
   </Form>
 </template>
 
-<style scoped></style>
+<style scoped>
+.form-login {
+  --p-inputtext-border-color: var(--color-ivory);
+  --p-inputtext-placeholder-color: var(--color-ivory);
+  --p-inputtext-background: transparent;
+  --p-inputtext-border-color: var(--color-ivory);
+  --p-inputtext-focus-border-color: var(--color-ivory);
+  --p-inputtext-hover-border-color: var(--color-ivory);
+  --p-inputtext-color: var(--color-ivory);
+}
+</style>

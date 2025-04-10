@@ -31,7 +31,7 @@ const handleKeydown = (e: KeyboardEvent, index: number) => {
         v-model="otp[index]"
         maxlength="1"
         type="text"
-        class="w-[71px] h-10 text-center border rounded-lg text-xl focus:outline-none focus:border-ivory bg-transparent text-ivory"
+        class="w-[71px] h-10 text-center border rounded-lg text-xl focus:outline-none focus:border-ivory bg-transparent text-ivory dark:border-ivory"
         @input="handleInput($event, index)"
         @keydown="handleKeydown($event, index)"
       />

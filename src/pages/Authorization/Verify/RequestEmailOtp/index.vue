@@ -45,4 +45,14 @@ const codeVerify = ref();
   </form>
 </template>
 
-<style scoped></style>
+<style scoped>
+.form {
+  --p-inputtext-border-color: var(--color-ivory);
+  --p-inputtext-placeholder-color: var(--color-ivory);
+  --p-inputtext-background: transparent;
+  --p-inputtext-border-color: var(--color-ivory);
+  --p-inputtext-focus-border-color: var(--color-ivory);
+  --p-inputtext-hover-border-color: var(--color-ivory);
+  --p-inputtext-color: var(--color-ivory);
+}
+</style>

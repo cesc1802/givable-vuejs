@@ -18,7 +18,7 @@ const genderOpt = [
   <div
     class="edit-profile-page flex flex-col items-center justify-center w-full p-[44px] gap-8 dark:bg-[#00715d9c]"
   >
-    <h1 class="text-4xl font-semibold">Chỉnh sửa hồ sơ</h1>
+    <h1 class="text-4xl font-semibold text-heading">Chỉnh sửa hồ sơ</h1>
     <img src="/src/assets/images/personal-avatar.png" />
     <form class="w-[360px] flex flex-col gap-4">
       <div>
@@ -88,6 +88,6 @@ const genderOpt = [
 
 .dark .edit-profile-page {
   --p-inputtext-color: var(--color-ivory);
-  --p-inputtext-placeholder-color: var(--color-gray-500);
+  --p-inputtext-placeholder-color: var(--color-ivory);
 }
 </style>

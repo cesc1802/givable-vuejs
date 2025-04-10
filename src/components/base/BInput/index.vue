@@ -45,5 +45,6 @@ defineEmits(["update:modelValue"]);
 
 .dark .b-input-wrapper {
   --p-inputtext-color: var(--color-ivory);
+  --p-inputtext-placeholder-color: var(--color-gray-200);
 }
 </style>

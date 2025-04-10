@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import { useUserStore } from "@store/user";
-import CheckIcon from "@/assets/icons/check.svg";
-import XIcon from "@/assets/icons/x-icon.svg";
+import { InputText } from "primevue";
 
 const userFullName = ref("");
 const email = ref("");
@@ -46,7 +44,9 @@ const handleRegister = () => {
 </script>
 
 <template>
-  <Form class="form text-ivory p-3 text-start flex flex-col gap-3 w-[320px]">
+  <Form
+    class="form-profile-create text-ivory p-3 text-start flex flex-col gap-3 w-[320px]"
+  >
     <div>
       <h1 class="text-xl font-semibold mb-1">Tạo hồ sơ</h1>
       <p class="text-sm">
@@ -57,7 +57,7 @@ const handleRegister = () => {
     <div class="flex flex-col gap-3">
       <div class="text-sm form-input">
         <div class="mb-2">Họ và tên <span class="text-error-600">*</span></div>
-        <BInput
+        <InputText
           v-model="userFullName"
           name="userFullName"
           class="w-full"
@@ -70,7 +70,7 @@ const handleRegister = () => {
         <div class="mb-2">
           Số điện thoại <span class="text-error-600">*</span>
         </div>
-        <BInput
+        <InputText
           v-model="userFullName"
           name="userFullName"
           class="w-full"
@@ -81,7 +81,7 @@ const handleRegister = () => {
       </div>
       <div class="text-sm form-input">
         <div class="mb-2">Địa chỉ <span class="text-error-600">*</span></div>
-        <BInput
+        <InputText
           v-model="userFullName"
           name="userFullName"
           class="w-full"
@@ -92,7 +92,7 @@ const handleRegister = () => {
       </div>
       <div class="text-sm form-input">
         <div class="mb-2">Giới tính</div>
-        <BInput
+        <InputText
           v-model="userFullName"
           name="userFullName"
           class="w-full"
@@ -103,7 +103,7 @@ const handleRegister = () => {
       </div>
       <div class="text-sm form-input">
         <div class="mb-2">Ngày sinh</div>
-        <BInput
+        <InputText
           v-model="userFullName"
           name="userFullName"
           class="w-full"
@@ -129,4 +129,14 @@ const handleRegister = () => {
   </Form>
 </template>
 
-<style scoped></style>
+<style scoped>
+.form-profile-create {
+  --p-inputtext-border-color: var(--color-ivory);
+  --p-inputtext-placeholder-color: var(--color-ivory);
+  --p-inputtext-background: transparent;
+  --p-inputtext-border-color: var(--color-ivory);
+  --p-inputtext-focus-border-color: var(--color-ivory);
+  --p-inputtext-hover-border-color: var(--color-ivory);
+  --p-inputtext-color: var(--color-ivory);
+}
+</style>
