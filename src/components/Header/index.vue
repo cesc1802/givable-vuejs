@@ -87,6 +87,12 @@ const userMenuOptions = [
     },
   },
 ];
+
+const isAuthProcess = computed(() => {
+  return route.matched.some((item) => {
+    return item.path === "/auth";
+  });
+});
 </script>
 <template>
   <div class="header flex items-center justify-between">
@@ -98,8 +104,8 @@ const userMenuOptions = [
       >
         <HeartIcon class="text-primary dark:text-ivory w-8 h-8" />
         <span class="text-primary dark:text-ivory font-bold text-[24px]"
-          >Givables</span
-        >
+          >Givables
+        </span>
       </router-link>
       <ul class="flex items-center">
         <li
@@ -147,7 +153,7 @@ const userMenuOptions = [
           </div>
         </Popover>
       </div>
-      <template v-else>
+      <template v-if="!isAuthProcess && !userStore.isLogin">
         <div
           class="flex items-center gap-3 text-primary px-[14px] py-[8px] border border-1 border-primary rounded-lg cursor-pointer"
           @click="() => router.push('/login')"

@@ -50,6 +50,16 @@ html.dark {
   --p-select-option-color: #f9f4e8 !important;
 }
 
+/* Ẩn nút lên xuống trong input type="number" */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
 body {
   margin: 0;
   padding: 0;
