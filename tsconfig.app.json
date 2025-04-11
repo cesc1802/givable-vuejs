@@ -18,10 +18,15 @@
       "@pages/*": ["src/pages/*"],
       "@router/*": ["src/router/*"],
       "@store/*": ["src/store/*"],
-      "@utils/*": ["src/utils/*"],
-      "@model/*": ["src/model/*"],
+      "@utils/*": ["src/utils/*"]
     },
-    "types": ["jest"],
+    "types": ["jest"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "shims-vue.d.ts", "global.d.ts"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "shims-vue.d.ts",
+    "global.d.ts"
+  ]
 }

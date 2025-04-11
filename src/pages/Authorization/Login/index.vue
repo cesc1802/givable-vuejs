@@ -29,9 +29,8 @@ const [password] = defineField("password");
 const onSubmit = handleSubmit((values) => {
   const fakeToken = "fake-jwt-token";
   const fakeUserInfo = {
-    id: "1",
     avatar: "https://via.placeholder.com/40",
-    name: "John Doe",
+    fullName: "John Doe",
   };
 
   localStorage.setItem("token", fakeToken);

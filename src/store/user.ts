@@ -1,10 +1,9 @@
-import type { IUserFormRegister, IUserInfo } from "@model/user";
+import type { IUserFormRegister, IUserInfo } from "@/models/user";
 import { defineStore } from "pinia";
 
 const initUserInfo: IUserInfo = {
-  id: "",
   avatar: "",
-  name: "",
+  fullName: "",
 };
 
 const initUserFormRegister: IUserFormRegister = {
@@ -38,7 +37,7 @@ export const useUserStore = defineStore("user", {
   },
   getters: {
     isLogin: (state) => {
-      return !!state.userInfo.id;
+      return !!state.userInfo.fullName;
     },
   },
 });
