@@ -1,5 +1,3 @@
-export interface IAuthDTO {
-  access_token: string;
-  refresh_token: string;
-  expires_in: number;
-}
+import { IAuth } from "./IAuth";
+
+export type IAuthDTO = IAuth;

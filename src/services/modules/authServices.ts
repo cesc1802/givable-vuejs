@@ -10,9 +10,9 @@ export const useAuthService = () => {
     try {
       const response = await authRepository.login(payload);
       const auth: IAuth = {
-        accessToken: response.access_token,
-        refreshToken: response.refresh_token,
-        expiresIn: response.expires_in,
+        access_token: response.access_token,
+        refresh_token: response.refresh_token,
+        expires_in: response.expires_in,
       };
       saveAuthToLocalStorage(auth);
       return auth;
@@ -30,9 +30,9 @@ export const useAuthService = () => {
     try {
       const response = await authRepository.refreshToken(refreshToken);
       const auth: IAuth = {
-        accessToken: response.access_token,
-        refreshToken: response.refresh_token,
-        expiresIn: response.expires_in,
+        access_token: response.access_token,
+        refresh_token: response.refresh_token,
+        expires_in: response.expires_in,
       };
       saveAuthToLocalStorage(auth);
       return auth;
@@ -63,8 +63,8 @@ export const useAuthService = () => {
   };
 
   const saveAuthToLocalStorage = (auth: IAuth) => {
-    localStorage.setItem("token", auth.accessToken);
-    localStorage.setItem("refreshToken", auth.refreshToken);
+    localStorage.setItem("token", auth.access_token);
+    localStorage.setItem("refreshToken", auth.refresh_token);
   };
 
   const clearAuthFromLocalStorage = () => {
