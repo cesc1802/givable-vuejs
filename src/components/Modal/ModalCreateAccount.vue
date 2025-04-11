@@ -28,7 +28,7 @@ const formValue = ref({
     :style="{ width: '30rem', height: 'auto' }"
   >
     <template #container="{ closeCallback }">
-      <div class="px-5 py-6 bg-ivory rounded-xl">
+      <div class="px-5 py-6 bg-ivory dark:bg-primary-400 rounded-xl">
         <h2 class="text-primary font-semibold text-lg mb-4">
           Tạo tài khoản mới
         </h2>
@@ -89,7 +89,9 @@ const formValue = ref({
           </div>
 
           <div class="grid grid-cols-2 gap-3">
-            <button class="bg-primary text-ivory rounded-lg h-[34px]">
+            <button
+              class="bg-primary dark:text-primary-500 text-ivory rounded-lg h-[34px]"
+            >
               Lưu
             </button>
             <button
@@ -112,9 +114,10 @@ const formValue = ref({
 }
 
 .form-create-account {
-  --p-inputtext-background: var(--color-ivory);
+  --p-inputtext-background: transparent;
   --p-inputtext-border-color: var(--color-primary);
   --p-inputtext-hover-border-color: var(--color-primary);
   --p-inputtext-focus-border-color: var(--color-primary);
+  --p-inputtext-placeholder-color: var(--color-gray-200);
 }
 </style>

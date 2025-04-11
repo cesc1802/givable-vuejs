@@ -30,25 +30,3 @@
     </div>
   </div>
 </template>
-
-<style scoped>
-.auth-layout {
-  --p-inputtext-border-color: var(--color-ivory);
-  --p-inputtext-color: var(--color-ivory);
-  --p-inputtext-background: transparent;
-  --p-inputtext-focus-border-color: var(--color-ivory);
-  --p-inputtext-hover-border-color: var(--color-ivory);
-  --p-inputtext-placeholder-color: var(--color-ivory);
-}
-
-/* Fix Chrome autofill input */
-.auth-layout input:-webkit-autofill,
-.auth-layout input:-webkit-autofill:hover,
-.auth-layout input:-webkit-autofill:focus,
-.auth-layout input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
-  -webkit-text-fill-color: inherit !important;
-  background-color: transparent !important;
-  color: inherit !important;
-}
-</style>

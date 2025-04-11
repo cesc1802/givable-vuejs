@@ -76,7 +76,7 @@ const productGave = ref([
       />
       <h2 class="text-4xl text-heading font-semibold mt-2">Giselle</h2>
       <button
-        class="flex items-center text-sm justify-center w-[190px] h-9 gap-3 bg-primary-50 border-primary-200 hover:bg-primary hover:text-ivory text-primary-300 rounded-[8px] transition cursor-pointer"
+        class="flex items-center text-sm justify-center w-[190px] h-9 gap-3 bg-primary-50 border-primary-200 text-primary-300 rounded-[8px] transition cursor-pointer"
         @click="() => $router.push('/edit-profile')"
       >
         Chỉnh sửa hồ sơ cá nhân
@@ -95,7 +95,9 @@ const productGave = ref([
       <div
         class="border border-primary rounded-lg px-8 py-6 w-full max-w-xs bg-translate"
       >
-        <h2 class="text-xl font-semibold text-center mb-4">Giới thiệu</h2>
+        <h2 class="text-xl font-semibold text-center mb-4 text-heading">
+          Giới thiệu
+        </h2>
 
         <ul class="space-y-2 text-sm text-heading">
           <li class="flex items-center gap-3">
@@ -132,15 +134,15 @@ const productGave = ref([
 
     <div class="lg:col-span-4">
       <div class="flex items-center justify-between flex-wrap">
-        <div>
+        <div class="text-heading">
           <h2 class="text-3xl text-heading font-semibold">Quản lý vật phẩm</h2>
-          <p class="text-gray text-lg m-w-[525px] mt-2">
+          <p class="text-lg m-w-[525px] mt-2">
             Quản lý các vật phẩm bạn đang chia sẻ và theo dõi trạng thái của
             chúng
           </p>
         </div>
         <button
-          class="flex items-center justify-center w-[176px] h-9 gap-3 bg-primary text-white rounded-[8px] hover:bg-primary transition cursor-pointer mt-3"
+          class="flex items-center justify-center w-[176px] h-9 gap-3 bg-primary text-white dark:text-primary-500 dark:bg-ivory rounded-[8px] hover:bg-primary transition cursor-pointer mt-3"
         >
           Chia sẻ vật phẩm mới
         </button>

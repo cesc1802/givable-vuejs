@@ -102,14 +102,14 @@ const selectClass = computed(() => {
   width: 100%;
   position: relative;
 
-  --p-select-color: var(--color-primary);
-  --p-select-placeholder-color: var(--color-gray);
+  --p-select-color: var(--color-gray);
+  --p-select-placeholder-color: var(--color-gray-200);
   --p-select-dropdown-color: var(--color-primary);
   --p-select-clear-icon-color: var(--color-primary);
 }
 
 .dark .custom-select-wrapper {
-  --p-select-placeholder-color: var(--color-ivory);
+  --p-select-color: var(--color-ivory);
 }
 
 .custom-select {

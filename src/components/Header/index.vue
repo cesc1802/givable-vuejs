@@ -87,6 +87,12 @@ const userMenuOptions = [
     },
   },
 ];
+
+const isAuthProcess = computed(() => {
+  return route.matched.some((item) => {
+    return item.path === "/auth";
+  });
+});
 </script>
 <template>
   <div class="header flex items-center justify-between">
@@ -98,8 +104,8 @@ const userMenuOptions = [
       >
         <HeartIcon class="text-primary dark:text-ivory w-8 h-8" />
         <span class="text-primary dark:text-ivory font-bold text-[24px]"
-          >Givables</span
-        >
+          >Givables
+        </span>
       </router-link>
       <ul class="flex items-center">
         <li
@@ -125,7 +131,7 @@ const userMenuOptions = [
       <div v-if="userStore.isLogin" class="flex items-center gap-2">
         <img src="@assets/images/avatar.png" class="inline" />
         <div
-          class="flex items-center gap-2 cursor-pointer hover:underline"
+          class="flex items-center gap-2 cursor-pointer decoration-primary hover:underline dark:decoration-ivory"
           @click="toggle"
         >
           <span class="text-[14px] text-primary">Giselle </span>
@@ -138,7 +144,7 @@ const userMenuOptions = [
               <li
                 v-for="(item, index) in userMenuOptions"
                 :key="index"
-                class="hover:text-primary cursor-pointer"
+                class="hover:text-primary cursor-pointer dark:hover:text-primary-500"
                 @click="item.action"
               >
                 {{ item.title }}
@@ -147,7 +153,7 @@ const userMenuOptions = [
           </div>
         </Popover>
       </div>
-      <template v-else>
+      <template v-if="!isAuthProcess && !userStore.isLogin">
         <div
           class="flex items-center gap-3 text-primary px-[14px] py-[8px] border border-1 border-primary rounded-lg cursor-pointer"
           @click="() => router.push('/login')"
@@ -156,7 +162,7 @@ const userMenuOptions = [
           <p class="text-sm">Đăng nhập</p>
         </div>
         <div
-          class="flex items-center gap-3 text-ivory px-[14px] py-[8px] bg-primary rounded-lg cursor-pointer"
+          class="flex items-center gap-3 text-ivory dark:text-primary-500 px-[14px] py-[8px] bg-primary rounded-lg cursor-pointer"
           @click="() => router.push('/register')"
         >
           <UserPlusIcon class="w-4 h-4" />

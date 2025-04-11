@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import SmartphoneIcon from "@/assets/icons/smartphone.svg";
-const codeVerify = ref(123);
 </script>
 
 <template>

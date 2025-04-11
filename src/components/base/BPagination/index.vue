@@ -6,7 +6,6 @@ interface PaginationProps {
   pagination: {
     per_page: number;
     total: number;
-    total_pages: number;
   };
   maxVisibleButtons?: number;
 }
@@ -25,17 +24,22 @@ const perPageOptionsMap = perPageOptions.map((option) => ({
 
 const perPage = ref(props.pagination.per_page || 10);
 const total = ref(props.pagination.total || 0);
-const totalPages = ref(props.pagination.total_pages || 0);
+const totalPages = computed(() => {
+  return Math.ceil(total.value / perPage.value);
+});
 
 watch(
   () => props.pagination,
   (newPagination) => {
     perPage.value = newPagination.per_page || 10;
     total.value = newPagination.total || 0;
-    totalPages.value = newPagination.total_pages || 0;
   },
   { immediate: true }
 );
+
+watch(perPage, (newPerPage) => {
+  emit("pagesizechanged", newPerPage);
+});
 
 const isInFirstPage = computed(() => props.currentPage === 1);
 const isInLastPage = computed(() => props.currentPage === totalPages.value);
@@ -56,6 +60,7 @@ const endPage = computed(() => {
 const pages = computed(() => {
   const range = [];
   for (let i = startPage.value; i <= endPage.value; i++) {
+    if (i == 0) continue;
     range.push(i);
   }
   return range;
@@ -73,8 +78,20 @@ const gotoPageNumber = (page: number) => {
 
 const gotoFirst = () => gotoPageNumber(1);
 const gotoLast = () => gotoPageNumber(totalPages.value);
-const gotoPrevious = () => gotoPageNumber(props.currentPage - 1);
-const gotoNext = () => gotoPageNumber(props.currentPage + 1);
+const gotoPrevious = () => {
+  if (isInFirstPage.value) return;
+  gotoPageNumber(props.currentPage - 1);
+};
+const gotoNext = () => {
+  if (isInLastPage.value) return;
+  gotoPageNumber(props.currentPage + 1);
+};
+
+const isActivePage = (page: number) => {
+  return page === props.currentPage
+    ? "bg-primary text-white dark:text-primary-500"
+    : "text-primary";
+};
 </script>
 
 <template>
@@ -94,20 +111,28 @@ const gotoNext = () => gotoPageNumber(props.currentPage + 1);
     <ul v-if="totalPages > 1" class="flex list-none rounded my-2 gap-2">
       <!-- Previous -->
       <li>
-        <div class="pagination-button">
-          <ChevronLeftIcon class="w-4 h-4 text-primary" @click="gotoPrevious" />
+        <div
+          class="pagination-button cursor-pointer text-primary hover:text-white"
+          @click="gotoPrevious"
+        >
+          <ChevronLeftIcon class="w-4 h-4" />
         </div>
       </li>
 
       <!-- Left dots -->
       <template v-if="showDots('left')">
         <li>
-          <button class="pagination-button" @click="gotoPageNumber(1)">
+          <button
+            class="pagination-button dark:text-ivory"
+            @click="gotoPageNumber(1)"
+          >
             1
           </button>
         </li>
         <li>
-          <button class="pagination-button" disabled>...</button>
+          <button class="pagination-button dark:text-ivory" disabled>
+            ...
+          </button>
         </li>
       </template>
 
@@ -115,7 +140,7 @@ const gotoNext = () => gotoPageNumber(props.currentPage + 1);
       <li v-for="page in pages" :key="page">
         <button
           class="pagination-button"
-          :class="{ active: page === props.currentPage }"
+          :class="isActivePage(page)"
           @click="gotoPageNumber(page)"
         >
           {{ page }}
@@ -125,10 +150,15 @@ const gotoNext = () => gotoPageNumber(props.currentPage + 1);
       <!-- Right dots -->
       <template v-if="showDots('right')">
         <li>
-          <button class="pagination-button" disabled>...</button>
+          <button class="pagination-button dark:text-ivory" disabled>
+            ...
+          </button>
         </li>
         <li>
-          <button class="pagination-button" @click="gotoPageNumber(totalPages)">
+          <button
+            class="pagination-button cursor-pointer dark:text-ivory"
+            @click="gotoPageNumber(totalPages)"
+          >
             {{ totalPages }}
           </button>
         </li>
@@ -136,8 +166,11 @@ const gotoNext = () => gotoPageNumber(props.currentPage + 1);
 
       <!-- Next -->
       <li>
-        <div class="pagination-button">
-          <ChevronRightIcon class="w-4 h-4 text-primary" @click="gotoNext" />
+        <div
+          class="pagination-button text-primary hover:text-white cursor-pointer"
+          @click="gotoNext"
+        >
+          <ChevronRightIcon class="w-4 h-4" />
         </div>
       </li>
     </ul>
@@ -146,9 +179,10 @@ const gotoNext = () => gotoPageNumber(props.currentPage + 1);
 
 <style scoped>
 .pagination-button {
-  @apply w-10 h-10 border text-primary border-primary rounded-lg flex items-center justify-center text-sm hover:bg-primary hover:text-white transition disabled:opacity-50 disabled:cursor-not-allowed;
+  @apply w-10 h-10 border  border-primary rounded-lg flex items-center justify-center text-sm hover:bg-primary hover:text-white transition disabled:opacity-50 disabled:cursor-not-allowed;
 }
-.pagination-button.active {
-  @apply bg-primary text-white;
+
+.dark .pagination-button {
+  @apply hover:text-primary-500;
 }
 </style>

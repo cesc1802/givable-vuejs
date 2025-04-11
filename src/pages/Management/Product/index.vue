@@ -133,7 +133,7 @@ const requireConfirmation = () => {
           <template #body="slotProps">
             <span
               v-if="slotProps.data.status === 'Active'"
-              class="text-sm text-primary bg-[#ECFDF3] rounded-2xl px-2 py-1"
+              class="text-sm text-primary bg-[#ECFDF3] dark:bg-primary-100 rounded-2xl px-2 py-1"
             >
               <span
                 class="w-2 h-2 rounded-[50%] inline-block bg-primary mr-1"
@@ -145,7 +145,7 @@ const requireConfirmation = () => {
               class="text-sm text-gray-700 bg-gray-100 rounded-2xl px-2 py-1"
             >
               <span
-                class="w-2 h-2 rounded-[50%] inline-block bg-primary mr-1"
+                class="w-2 h-2 rounded-[50%] inline-block bg-primary dark:bg-primary-100 mr-1"
               ></span>
               {{ slotProps.data.status }}
             </span>
@@ -179,8 +179,6 @@ const requireConfirmation = () => {
 <style scoped>
 .data-table {
   --p-datatable-header-cell-background: var(--color-ivory);
-  --p-datatable-row-background-color: var(--color-ivory);
-  --p-datatable-row-background: var(--color-ivory);
 
   --p-datatable-body-cell-border-color: var(--color-primary);
   --p-datatable-row-color: var(--color-primary);

@@ -16,9 +16,9 @@ const genderOpt = [
 </script>
 <template>
   <div
-    class="edit-profile-page flex flex-col items-center justify-center w-full p-[44px] gap-8"
+    class="edit-profile-page flex flex-col items-center justify-center w-full p-[44px] gap-8 dark:bg-[#00715d9c]"
   >
-    <h1 class="text-4xl font-semibold">Chỉnh sửa hồ sơ</h1>
+    <h1 class="text-4xl font-semibold text-heading">Chỉnh sửa hồ sơ</h1>
     <img src="/src/assets/images/personal-avatar.png" />
     <form class="w-[360px] flex flex-col gap-4">
       <div>
@@ -47,7 +47,7 @@ const genderOpt = [
       </div>
       <div>
         <p class="text-heading text-sm mb-2">Giới tính</p>
-        <Select
+        <BSelect
           v-model="formValue.gender"
           :options="genderOpt"
           optionLabel="name"
@@ -67,7 +67,7 @@ const genderOpt = [
 
       <div class="justify-center items-center flex">
         <button
-          class="flex items-center justify-center w-[115px] h-10 gap-3 bg-primary text-white rounded-[8px] hover:bg-primary transition cursor-pointer mt-3"
+          class="flex items-center justify-center w-[115px] h-10 gap-3 bg-primary text-white dark:bg-ivory dark:text-primary-500 rounded-[8px] hover:bg-primary transition cursor-pointer mt-3"
           @click="() => $router.push('/profile')"
         >
           Lưu thay đổi
@@ -84,11 +84,10 @@ const genderOpt = [
   --p-inputtext-color: var(--color-gray);
   --p-inputtext-focus-border-color: var(--color-primary);
   --p-inputtext-hover-border-color: var(--color-primary);
+}
 
-  --p-select-background: transparent;
-  --p-select-color: var(--color-gray);
-  --p-select-border-color: var(--color-primary);
-  --p-select-focus-border-color: var(--color-primary);
-  --p-select-hover-border-color: var(--color-primary);
+.dark .edit-profile-page {
+  --p-inputtext-color: var(--color-ivory);
+  --p-inputtext-placeholder-color: var(--color-ivory);
 }
 </style>

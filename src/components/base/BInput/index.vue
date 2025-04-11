@@ -36,14 +36,15 @@ defineEmits(["update:modelValue"]);
 <style scoped>
 .b-input-wrapper {
   --p-inputtext-border-color: var(--color-primary);
+  --p-inputtext-placeholder-color: var(--color-gray-200);
   --p-inputtext-background: transparent;
   --p-inputtext-border-color: var(--color-primary);
   --p-inputtext-focus-border-color: var(--color-primary);
   --p-inputtext-hover-border-color: var(--color-primary);
-  --p-inputtext-placeholder-color: var(--color-gray);
 }
 
 .dark .b-input-wrapper {
-  --p-inputtext-placeholder-color: var(--color-ivory);
+  --p-inputtext-color: var(--color-ivory);
+  --p-inputtext-placeholder-color: var(--color-gray-200);
 }
 </style>

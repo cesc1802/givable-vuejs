@@ -14,7 +14,9 @@ defineProps<{
     style="width: 26%"
   >
     <template #container="{ message, acceptCallback, rejectCallback }">
-      <div class="flex flex-col items-center p-8 bg-ivory rounded-lg gap-8">
+      <div
+        class="flex flex-col items-center p-8 bg-ivory dark:bg-primary-400 rounded-lg gap-8"
+      >
         <AlertOctagonIcon class="text-error-700 w-[120px] h-[120px]" />
 
         <p class="mb- text-3xl font-medium text-heading">
