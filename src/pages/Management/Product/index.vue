@@ -168,7 +168,6 @@ const requireConfirmation = () => {
         :pagination="{
           per_page: 10,
           total: 187,
-          total_pages: 19,
         }"
         :current-page="1"
       />

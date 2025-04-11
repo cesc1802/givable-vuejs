@@ -1,3 +1,12 @@
+export interface IUser {
+  fullName: string;
+  email: string;
+  phone?: string;
+  address: string;
+  gender: string;
+  birthday: string;
+}
+
 export interface IUserInfo {
   id: string;
   avatar?: string;

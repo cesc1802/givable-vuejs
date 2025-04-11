@@ -1,4 +1,4 @@
-import type { IUserFormRegister, IUserInfo } from "@model/user";
+import type { IUserFormRegister, IUserInfo } from "@/models/user";
 import { defineStore } from "pinia";
 
 const initUserInfo: IUserInfo = {
