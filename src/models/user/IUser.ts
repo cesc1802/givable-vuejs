@@ -2,6 +2,7 @@ export interface IUser {
   fullName: string;
   first_name: string;
   last_name: string;
+  avatar?: string;
   email: string;
   phone?: string;
   address: string;
@@ -9,11 +10,7 @@ export interface IUser {
   birthday: string;
 }
 
-export interface IUserInfo {
-  id: string;
-  avatar?: string;
-  name: string;
-}
+export type IUserInfo = Pick<IUser, "avatar" | "fullName">;
 
 export interface IUserFormRegister {
   userFullName: string;
