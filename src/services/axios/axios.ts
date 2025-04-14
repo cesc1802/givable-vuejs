@@ -1,4 +1,5 @@
-import axios, { AxiosRequestHeaders } from 'axios';
+import axios, { AxiosRequestHeaders } from "axios";
+import { useAuthService } from "@/services/modules/authServices";
 
 const { CancelToken } = axios;
 const source = CancelToken.source();
@@ -10,15 +11,17 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     if (token) {
       config.headers = config.headers || ({} as AxiosRequestHeaders);
-      config.headers['Authorization'] = `Bearer ${token}`;
+      config.headers["Authorization"] = `Bearer ${token}`;
     }
     return config;
   },
   (error) => Promise.reject(error)
 );
+
+const { logout } = useAuthService();
 
 // Response interceptor
 axiosInstance.interceptors.response.use(

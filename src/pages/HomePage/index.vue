@@ -171,29 +171,7 @@ import SearchIcon from "@assets/icons/search.svg";
 import SendIcon from "@assets/icons/send.svg";
 import TickCircleIcon from "@assets/icons/tick-circle.svg";
 import UsersIcon from "@assets/icons/users.svg";
-import BackgroundVolumnTeer from "@assets/images/background-volunteer-holding-box.svg";
-import { IProduct } from "@model/product";
-import HttpFetcher from "@utils/http";
-import { onMounted, ref } from "vue";
 import "./styles.css";
-
-const products = ref<IProduct[]>([]);
-
-const fetchProducts = async () => {
-  try {
-    const response = await HttpFetcher.get("https://fakestoreapi.com/products");
-    console.log("response123", response);
-    if (!response.success) return;
-    products.value = response.data as IProduct[];
-    console.log("products123", products);
-  } catch (error) {
-    console.error("Error fetching products:", error);
-  }
-};
-
-onMounted(() => {
-  fetchProducts();
-});
 
 const items = ref([
   {
